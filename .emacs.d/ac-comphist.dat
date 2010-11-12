@@ -1,0 +1,54 @@
+((("set-frame-configuration" .
+   [0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("current-frame-configuration" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("f12" .
+   [0 0 1])
+  ("latex-save" .
+   [3 0 0 0 0 0 0 0 0 0])
+  ("add-hook" .
+   [1 0 0 0 0 0 0 0])
+  ("retcode" .
+   [16 0 0 0 0 0 0])
+  ("save-buffer" .
+   [1 0 0 0 0 0 0 0 0 0 0])
+  ("defun" .
+   [5 0 0 0 0])
+  ("write-file" .
+   [1 0 0 0 0 0 0 0 0 0])
+  ("interactive" .
+   [2 0 0 0 0 0 4 4 0 0 1])
+  ("lambda" .
+   [7 0 0 1 1 0])
+  ("kbd" .
+   [5 0 0])
+  ("global-set-key" .
+   [2 0 0 0 0 0 0 0 0 0 1 0 0 5])
+  ("other-window" .
+   [2 0 0 0 0 0 0 0 0 0 0 0])
+  ("find-file" .
+   [2 0 0 0 0 0 0 0 0])
+  ("shell-command" .
+   [5 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("concat" .
+   [4 0 0 0 0 0])
+  ("buffer-file-name" .
+   [2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6])
+  ("tex-to-pdf" .
+   [2 0 0 1 1 2 2 0 0 0])
+  ("fname" .
+   [14 0 0 0 0])
+  ("setq" .
+   [6 0 0 0])
+  ("new-text" .
+   [2 0 0 0 1 0 0 0])
+  ("define-key" .
+   [2 0 0 0 0 0 0 0 0 0])
+  ("LaTeX-mode-map" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 2])
+  ("kdb" .
+   [1 0 0])
+  ("latex-view" .
+   [6 0 0 0 0 0 0 0 0 0])
+  ("progn" .
+   [1 0 0 0 0])))

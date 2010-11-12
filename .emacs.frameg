@@ -1,0 +1,8 @@
+;;; This file stores the previous emacs frame's geometry.
+;;; Last generated Thu Nov 11 20:57:52 2010.
+(setq initial-frame-alist
+      '((font . "-unknown-DejaVu Sans Mono-normal-normal-normal-*-13-*-*-*-m-0-iso10646-1")
+        (top . 46)
+        (left . 206)
+        (width . 174)
+        (height . 52)))
