@@ -1,36 +1,45 @@
 (load-file "~/.emacs.d/cedet-1.0/common/cedet.el")
 (load-file "~/.emacs.d/dark-blue-3.el")
 
+(defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap")
+
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/ecb-2.40")
 (add-to-list 'load-path "~/.emacs.d/auto-complete-1.3")
 (add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0")
 
-(global-set-key (kbd "RET") 'newline-and-indent)
-(global-set-key (kbd "C-o") (lambda ()
+(define-key my-keys-minor-mode-map (kbd "RET") 'newline-and-indent)
+(define-key my-keys-minor-mode-map (kbd "C-o") (lambda ()
                               (interactive)
                               (move-end-of-line 1)
                               (newline-and-indent)))
-(global-set-key (kbd "C-d") (lambda ()
+(define-key my-keys-minor-mode-map (kbd "C-M-o") (lambda ()
+                                                   (interactive)
+                                                   (move-beginning-of-line 1)
+                                                   (newline)
+                                                   (previous-line)
+                                                   (indent-according-to-mode)))
+(define-key my-keys-minor-mode-map (kbd "C-d") (lambda ()
                               (interactive)
                               (move-beginning-of-line 1)
-                              (kill-whole-line)))
-(global-set-key [f1] 'save-buffer)
-(global-set-key [f2] (lambda ()
+                              (kill-whole-line 1)
+                              (indent-according-to-mode)))
+(define-key my-keys-minor-mode-map [f1] 'save-buffer)
+(define-key my-keys-minor-mode-map [f2] (lambda ()
                        (interactive)
                        (ecb-minor-mode)))
-(global-set-key (kbd "C-z") (lambda ()
+(define-key my-keys-minor-mode-map (kbd "C-z") (lambda ()
                               (interactive)
                               (split-window-horizontally)
                               (next-window)
-                              (shell)))
-(global-set-key [f4] 'find-file)
-(global-set-key [f3] 'other-window)
-(global-set-key [f5] 'ido-switch-buffer)
-(global-set-key (kbd "M-h") 'backward-char)
-(global-set-key (kbd "M-j") 'next-line)
-(global-set-key (kbd "M-k") 'previous-line)
-(global-set-key (kbd "M-l") 'forward-char)
+                              (term "/bin/bash")))
+(define-key my-keys-minor-mode-map [f4] 'find-file)
+(define-key my-keys-minor-mode-map [f3] 'other-window)
+(define-key my-keys-minor-mode-map [f5] 'ido-switch-buffer)
+(define-key my-keys-minor-mode-map (kbd "M-h") 'backward-char)
+(define-key my-keys-minor-mode-map (kbd "M-j") 'next-line)
+(define-key my-keys-minor-mode-map (kbd "M-k") 'previous-line)
+(define-key my-keys-minor-mode-map (kbd "M-l") 'forward-char)
 
 (require 'color-theme)
 (eval-after-load "color-theme"
@@ -130,12 +139,14 @@
     new-text))
 
 (defun latex-view ()
-  (let (fname retcode)
+  (let (fname retcode f1)
+    (setq f1
+          current-frame-configuration)
     (setq fname
           (tex-to-pdf buffer-file-name))
     (setq retcode
           (shell-command (concat "evince " fname " &")))
-    retcode))
+    (set-frame-configuration f1)))
 
 (defun latex-save ()
   (interactive)
@@ -144,9 +155,18 @@
         (retcode (shell-command (concat "pdflatex " buffer-file-name))))
     (if (= retcode 0) (set-frame-configuration f1))))
 
-(latex-save)
-    
 
 (add-hook 'LaTeX-mode-hook (lambda ()
   (define-key LaTeX-mode-map [f12] '(lambda () (interactive) (latex-save)))
   (define-key LaTeX-mode-map [(shift f12)] '(lambda () (interactive) (latex-view)))))
+
+
+(define-minor-mode my-keys-minor-mode
+  "A minor mode to override major mode keybindings"
+  t " my-keys" 'my-keys-minor-mode-map)
+
+(my-keys-minor-mode 1)
+(defun my-minibuffer-setup-hook ()
+  (my-keys-minor-mode 0))
+
+(add-hook 'minibuffer-setup-hook 'my-minibuffer-setup-hook)
