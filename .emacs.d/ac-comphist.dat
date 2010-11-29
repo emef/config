@@ -1,70 +1,22 @@
-((("dir" .
-   [1 0 0])
-  ("stair_direction" .
-   [3 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("indent-according-to-model" .
-   [0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("previous-line" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("move-beginning-of-line" .
-   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("my-keys-minor-mode-map" .
-   [3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0])
-  ("progn" .
-   [1 0 0 0 0])
-  ("latex-view" .
-   [6 0 0 0 0 0 0 0 0 0])
-  ("kdb" .
-   [1 0 0])
-  ("LaTeX-mode-map" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 2])
-  ("define-key" .
-   [2 0 0 0 0 0 0 0 0 1])
-  ("new-text" .
-   [2 0 0 0 1 0 0 0])
-  ("setq" .
-   [6 0 0 0])
-  ("fname" .
-   [14 0 0 0 0])
-  ("tex-to-pdf" .
-   [2 0 0 1 1 2 2 0 0 0])
-  ("buffer-file-name" .
-   [2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6])
-  ("concat" .
-   [4 0 0 0 0 0])
-  ("shell-command" .
-   [5 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("find-file" .
-   [2 0 0 0 0 0 0 0 0])
-  ("other-window" .
-   [2 0 0 0 0 0 0 0 0 0 0 0])
-  ("global-set-key" .
-   [2 0 0 0 0 0 0 0 0 0 1 0 0 5])
-  ("kbd" .
-   [6 0 0])
-  ("lambda" .
-   [7 0 0 1 2 0])
+((("slime-eval-last-expression" .
+   [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("forward-paragraph" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0])
+  ("move-end-of-paragraph" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0])
   ("interactive" .
-   [2 0 0 0 0 0 5 4 0 0 1])
-  ("write-file" .
-   [1 0 0 0 0 0 0 0 0 0])
-  ("defun" .
-   [6 0 0 0 0])
-  ("save-buffer" .
    [1 0 0 0 0 0 0 0 0 0 0])
-  ("retcode" .
-   [16 0 0 0 0 0 0])
+  ("kbd" .
+   [1 0 0])
+  ("define-key" .
+   [0 0 0 0 0 0 0 0 0 1])
+  ("file" .
+   [1 0 0 0])
+  ("defun" .
+   [1 0 0 0 0])
   ("add-hook" .
-   [2 0 0 0 0 0 0 0])
-  ("latex-save" .
-   [3 0 0 0 0 0 0 0 0 0])
-  ("f12" .
-   [0 0 1])
-  ("current-frame-configuration" .
-   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("set-frame-configuration" .
-   [0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("my-keys-minor-mode" .
-   [0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 2])
-  ("my-minibuffer-setup-hook" .
-   [0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])))
+   [0 0 0 0 0 0 1 0])
+  ("lambda" .
+   [2 0 0 0 0 0])
+  ("slime" .
+   [0 0 0 0 1])))
