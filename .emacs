@@ -11,6 +11,14 @@
 (add-to-list 'load-path "~/.emacs.d/auto-complete-1.3")
 (add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0")
 
+(define-key lisp-mode-shared-map "\C-q" (lambda ()
+                                            (interactive)
+                                            (let ((p (point)))
+                                              (forward-paragraph)
+                                              (slime-eval-last-expression)
+                                              (goto-char p))))
+
+
 (define-key my-keys-minor-mode-map (kbd "RET") 'newline-and-indent)
 (define-key my-keys-minor-mode-map (kbd "C-o") (lambda ()
                               (interactive)
@@ -52,17 +60,20 @@
 
 (require 'yasnippet-bundle)
 
+;; python
 (autoload 'python-mode "python-mode" "Python Mode." t)
 (add-to-list 'interpreter-mode-alist '("python" . python-mode))
 (require 'python-mode)
 
-(autoload 'pymacs-apply "pymacs")
-(autoload 'pymacs-call "pymacs")
-(autoload 'pymacs-eval "pymacs" nil t)
-(autoload 'pymacs-exec "pymacs" nil t)
-(autoload 'pymacs-load "pymacs" nil t)
-(pymacs-load "ropemacs" "rope-")
-(setq ropemacs-enable-autoimport t)
+;; common lisp
+(setq inferior-lisp-program "/usr/bin/sbcl")
+(add-to-list 'load-path "~/.emacs.d/slime/")
+(require 'slime)
+(add-hook 'lisp-mode-hook (lambda () (slime-mode t)))
+(add-hook 'inferior-lisp-mode-hook (lambda () (inferior-slime-mode t)))
+(slime-setup)
+
+
 
 (require 'auto-complete)
 (global-auto-complete-mode t)
@@ -143,7 +154,7 @@
 (defun latex-view ()
   (let (fname retcode f1)
     (setq f1
-          current-frame-configuration)
+          current-frame-configuration)j
     (setq fname
           (tex-to-pdf buffer-file-name))
     (setq retcode
@@ -162,6 +173,29 @@
   (define-key LaTeX-mode-map [f12] '(lambda () (interactive) (latex-save)))
   (define-key LaTeX-mode-map [(shift f12)] '(lambda () (interactive) (latex-view)))))
 
+
+;; alias for better perl mode
+(defalias 'perl-mode 'cperl-mode)
+(setq auto-mode-alist
+      (append '(("\\.\\([pP][Llm]\\|al\\)$" . cperl-mode)) auto-mode-alist ))
+(setq interpreter-mode-alist (append interpreter-mode-alist
+                                      '(("perl6" . cperl-mode))))
+
+(defun goto-perl ()
+  (let (bname)
+    (interactive)
+    (setq bname (buffer-file-name))
+    (if (eq nil (get-buffer "*perl*"))
+        (progn (shell)
+               (rename-buffer "*perl*")
+               (my-keys-minor-mode 0))
+      (switch-to-buffer "*perl*"))
+    (insert "perl6")
+    (comint-send-input)))
+
+;(define-key cperl-mode-map (kbd "C-c C-c") (lambda ()
+;                                             (interactive)
+;                                             (goto-perl)))
 
 (define-minor-mode my-keys-minor-mode
   "A minor mode to override major mode keybindings"
