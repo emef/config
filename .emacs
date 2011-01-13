@@ -1,4 +1,3 @@
-(load-file "~/.emacs.d/cedet-1.0/common/cedet.el")
 (load-file "~/.emacs.d/dark-blue-3.el")
 
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
@@ -7,7 +6,6 @@
 (defvar my-keys-minor-mode-map (make-keymap) "my-keys-minor-mode keymap")
 
 (add-to-list 'load-path "~/.emacs.d")
-(add-to-list 'load-path "~/.emacs.d/ecb-2.40")
 (add-to-list 'load-path "~/.emacs.d/auto-complete-1.3")
 (add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0")
 
@@ -19,7 +17,11 @@
                                               (goto-char p))))
 
 
-(define-key my-keys-minor-mode-map (kbd "RET") 'newline-and-indent)
+(define-key my-keys-minor-mode-map (kbd "RET")
+  (lambda ()
+    (interactive)
+    (newline)
+    (indent-according-to-mode)))
 (define-key my-keys-minor-mode-map (kbd "C-o") (lambda ()
                               (interactive)
                               (move-end-of-line 1)
@@ -77,8 +79,6 @@
 
 (require 'auto-complete)
 (global-auto-complete-mode t)
-
-(require 'ecb)
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
