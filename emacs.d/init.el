@@ -18,7 +18,6 @@
 
 (require 'my-keys)
 (require 'my-ido)
-(require 'package)
 (require 'uniquify)
 ;(require 'paredit)
 (require 'auto-complete)
