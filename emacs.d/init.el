@@ -56,12 +56,6 @@
 ;; Wrap lines at 80 characters.
 (setq-default fill-column 70)
 
-;; package repos
-(setq package-archives '(("ELPA" . "http://tromey.com/elpa/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("gnu" . "http://elpa.gnu.org/packages/")))
-(package-initialize)
-
 
 ;; line numbers
 (global-linum-mode t)
