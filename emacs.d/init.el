@@ -53,12 +53,6 @@
 ;; Show column-number in the mode line.
 (column-number-mode 1)
 
-;; Only load and save desktops to the home dir.
-(setq desktop-path (list (expand-file-name "~/")))
-(setq desktop-dirname (expand-file-name "~/"))
-(setq desktop-base-file-name ".emacs.desktop")
-(desktop-save-mode t)
-
 ;; Wrap lines at 80 characters.
 (setq-default fill-column 70)
 
