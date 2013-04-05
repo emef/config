@@ -67,25 +67,6 @@
 ;; Highlight matching parentheses.
 (show-paren-mode t)
 
-;; shell fixes
-(defadvice comint-previous-matching-input
-    (around suppress-history-item-messages activate)
-  "Suppress the annoying 'History item : NNN' messages from shell history isearch.
-If this isn't enough, try the same thing with
-comint-replace-by-expanded-history-before-point."
-  (let ((old-message (symbol-function 'message)))
-    (unwind-protect
-      (progn (fset 'message 'ignore) ad-do-it)
-    (fset 'message old-message))))
-
-(add-hook 'shell-mode-hook
-          (lambda ()
-            (setq tab-width 8)))
-
-
-;; make advice stick
-(load "comint.el.gz")
-
 ;;; general settings
 (setq-default c-default-style "linux"
               tab-width 4
