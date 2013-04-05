@@ -18,10 +18,6 @@
 
 (require 'my-keys)
 (require 'my-ido)
-;(require 'my-slime)
-;(require 'my-matlab)
-;(require 'my-linum)
-(require 'my-yasnippet)
 (require 'package)
 (require 'uniquify)
 ;(require 'paredit)

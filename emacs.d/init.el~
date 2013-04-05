@@ -1,5 +1,6 @@
 ;;;macbook specific settings
-(setq mac-command-modifier 'meta)
+(when window-system
+    (setq mac-command-modifier 'meta))
 
 ;;;augment path
 (setenv "PATH" (concat (getenv "PATH") ":/usr/texbin:/usr/local/bin:/usr/local/go/bin"))
