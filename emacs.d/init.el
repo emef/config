@@ -25,6 +25,7 @@
 (require 'python)
 (require 'erlang)
 (require 'org)
+(require 'color-theme)
 
 ;; Helper function to reload this file on the fly.
 (defun reload-dot-emacs ()
