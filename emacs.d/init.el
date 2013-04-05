@@ -46,7 +46,7 @@
 (setq uniquify-ignore-buffers-re "^\\*")
 
 ;; color themes
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/custom-themes")
 (load-theme 'github t)
 
 ;; Highlight matching parentheses.
