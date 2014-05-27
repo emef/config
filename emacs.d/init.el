@@ -1,37 +1,46 @@
-;;;macbook specific settings
-(when window-system
-    (setq mac-command-modifier 'meta))
+(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
+(require 'cl)
 
-;;;augment path
-(setenv "PATH" (concat (getenv "PATH") ":/usr/texbin:/usr/local/bin:/usr/local/go/bin"))
-(setq exec-path (append exec-path '("/usr/local/gnat/bin/"
-                                    "/usr/local/bin"
-                                    "/usr/texbin"
-                                    "/opt/local/bin") exec-path))
+(load "package")
+(package-initialize)
+
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 ;; setup load path
 (push (expand-file-name "~/.emacs.d") load-path)
-(let ((default-directory "~/.emacs.d/elpa/"))
-      (normal-top-level-add-subdirs-to-load-path))
-(let ((default-directory "~/.emacs.d/plugins/"))
-      (normal-top-level-add-subdirs-to-load-path))
 
+(defvar matt/packages '(auto-complete
+			autopair
+			gist
+			go-mode
+			htmlize
+			org
+			paredit
+			color-theme)
+  "Default packages")
+
+(defun matt/packages-installed-p ()
+  (loop for pkg in matt/packages
+        when (not (package-installed-p pkg)) do (return nil)
+        finally (return t)))
+
+(unless (matt/packages-installed-p)
+  (message "%s" "Refreshing package database...")
+  (package-refresh-contents)
+  (dolist (pkg matt/packages)
+    (when (not (package-installed-p pkg))
+      (package-install pkg))))
+
+(require 'color-theme)
 (require 'my-keys)
 (require 'my-ido)
 (require 'uniquify)
-;(require 'paredit)
 (require 'auto-complete)
 (require 'ido)
 (require 'python)
-(require 'erlang)
-(require 'org)
-(require 'color-theme)
-
-;; Helper function to reload this file on the fly.
-(defun reload-dot-emacs ()
-  (interactive)
-  (load-file "~/.emacs.d/init.el")
-  (message ".emacs.d/init.el reloaded"))
 
 ;; autocomplete
 (global-auto-complete-mode t)
@@ -79,7 +88,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
+; '(ansi-color-names-vector ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
  '(comint-input-ignoredups t)
  '(comint-input-ring-size 500)
  '(custom-safe-themes (quote ("e7b8656484a079b3651360c621be0cf2bb6d67a2b9cf33b454cfc4d55fb22e58" "9a290da044d7847abab3502b98e3849284e4ee93bc9ffff7bb0af0967f9226cc" "a5057d754b6482dd48e3fc099004026c75592794c322bc7368368aaaf332897c" "1d13b4ccd3b56e6264f5895b5c6c575eedbfb73a36aaeb05b91565ea211faa2f" "ebdf5574672e641900e6c16275d0594b7de5b95d8e1283f57f9144a4eebf7806" "dc758223066a28f3c6ef6c42c9136bf4c913ec6d3b710794252dc072a3b92b14" default)))

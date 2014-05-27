@@ -31,7 +31,7 @@
 (define-key my-keys-minor-mode-map (kbd "C-M-t") 'backward-paragraph)
 (define-key my-keys-minor-mode-map (kbd "M-n") 'forward-char)
 (define-key my-keys-minor-mode-map (kbd "M-u") 'forward-word)
-(define-key my-keys-minor-mode-map (kbd "C-.") 'move-end-of-line)
+(define-key my-keys-minor-mode-map (kbd "M-4") 'move-end-of-line)
 (define-key my-keys-minor-mode-map (kbd "C-d") 'backward-sexp)
 (define-key my-keys-minor-mode-map (kbd "C-l") 'goto-line)
 (define-key my-keys-minor-mode-map (kbd "C-p") 'isearch-backward)
