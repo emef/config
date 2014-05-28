@@ -1,4 +1,4 @@
-p(defvar my-linum-format-string "%4d")
+(defvar my-linum-format-string "%4d")
 
 (add-hook 'linum-before-numbering-hook 'my-linum-get-format-string)
 
