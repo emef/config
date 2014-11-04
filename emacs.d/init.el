@@ -1,5 +1,12 @@
+(when window-system
+  (scroll-bar-mode 0)
+  (setq mac-command-modifier 'meta))
+
 (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
 (require 'cl)
+
+;; setup load path
+(push (expand-file-name "~/.emacs.d") load-path)
 
 (load "package")
 (package-initialize)
@@ -9,8 +16,6 @@
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
-;; setup load path
-(push (expand-file-name "~/.emacs.d") load-path)
 
 (defvar matt/packages '(auto-complete
 			autopair
@@ -68,7 +73,6 @@
 
 ;; line numbers
 (global-linum-mode t)
-(scroll-bar-mode 0)
 
 ;; shitty whitespace
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
