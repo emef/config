@@ -1,0 +1,623 @@
+;; Object etcdclient/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "etcdclient/"
+  :tables
+  (list
+    (semanticdb-table "etcdclient.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("curl/curl.h" include (:system-flag t) nil [1 23])
+            ("iostream" include (:system-flag t) nil [24 43])
+            ("sstream" include (:system-flag t) nil [44 62])
+            ("vector" include (:system-flag t) nil [63 80])
+            ("memory" include (:system-flag t) nil [81 98])
+            ("string" include (:system-flag t) nil [99 116])
+            ("rapidjson/document.h" include nil nil [117 148])
+            ("rapidjson/writer.h" include nil nil [149 178])
+            ("rapidjson/prettywriter.h" include nil nil [179 214])
+            ("rapidjson/stringbuffer.h" include nil nil [215 250])
+            ("etcdclient.h" include nil nil [251 274])
+            ("std" using (:type ("std" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [276 296])
+            ("rapidjson" using (:type ("rapidjson" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [297 323])
+            ("etcd" using (:type ("etcd" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [324 345])
+            ("writer" function
+               (:arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [452 463])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [464 476])
+                    ("nmemb" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [477 490])
+                    ("buffer" variable
+                       (:pointer 1
+                        :type ("string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [491 506]))                  
+                :type "int")
+                nil [441 640])
+            ("with_curl" function
+               (:template 
+                  ( ("fun" type (:type "class") nil nil))                  
+                :type ("unique_ptr" type
+                     (:template-specifier 
+                        ( ("Document" type nil nil nil))                        
+                      :type "class")
+                      nil nil)
+                :arguments 
+                  ( ("process" variable (:type ("fun" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [697 709]))                  )
+                nil [642 1286])
+            ("base_url" function
+               (:arguments 
+                  ( ("host" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Host" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1304 1321])
+                    ("key" variable
+                       (:constant-flag t
+                        :type ("string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1322 1339]))                  
+                :type ("string" type (:type "class") nil nil))
+                nil [1288 1468])
+            ("nextHost" function
+               (:parent "Session"
+                :type ("Host" type (:type "class") nil nil))
+                nil [1470 1540])
+            ("isDirectory" function
+               (:arguments 
+                  ( ("doc" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Value" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1559 1576]))                  
+                :type "bool")
+                nil [1542 1663])
+            ("checkForError" function
+               (:pointer 1
+                :arguments 
+                  ( ("resp" variable
+                       (:reference 1
+                        :type ("Document" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1816 1831]))                  
+                :type ("ResponseError" type (:type "class") nil nil))
+                nil [1787 2067])
+            ("readNode" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("root" variable
+                       (:reference 1
+                        :type ("Value" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2084 2096]))                  
+                :type ("Node" type (:type "class") nil nil))
+                nil [2069 2097])
+            ("readChildNodes" function
+               (:arguments 
+                  ( ("parentNode" variable
+                       (:reference 1
+                        :type ("Value" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2127 2145]))                  
+                :type ("vector" type
+                     (:template-specifier 
+                        ( ("Node" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [2099 2380])
+            ("readNode" function
+               (:pointer 1
+                :arguments 
+                  ( ("root" variable
+                       (:reference 1
+                        :type ("Value" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2397 2409]))                  
+                :type ("Node" type (:type "class") nil nil))
+                nil [2382 2773])
+            ("get" function
+               (:parent "Session"
+                :arguments 
+                  ( ("key" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2812 2823]))                  
+                :type ("unique_ptr" type
+                     (:template-specifier 
+                        ( ("GetResponse" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [2775 2853])
+            ("get" function
+               (:parent "Session"
+                :arguments 
+                  ( ("key" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2892 2903])
+                    ("recursive" variable (:type "bool") (reparse-symbol arg-sub-list) [2904 2919]))                  
+                :type ("unique_ptr" type
+                     (:template-specifier 
+                        ( ("GetResponse" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [2855 3552])
+            ("putToURL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("url" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3587 3598])
+                    ("value" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3599 3612]))                  
+                :type ("unique_ptr" type
+                     (:template-specifier 
+                        ( ("PutResponse" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [3554 3613])
+            ("put" function
+               (:parent "Session"
+                :arguments 
+                  ( ("key" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3651 3662])
+                    ("value" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3663 3676]))                  
+                :type ("unique_ptr" type
+                     (:template-specifier 
+                        ( ("PutResponse" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [3614 3774])
+            ("put" function
+               (:parent "Session"
+                :arguments 
+                  ( ("key" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3813 3824])
+                    ("value" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3825 3838])
+                    ("ttl" variable (:type "int") (reparse-symbol arg-sub-list) [3839 3847]))                  
+                :type ("unique_ptr" type
+                     (:template-specifier 
+                        ( ("PutResponse" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [3776 3972])
+            ("putToURL" function
+               (:arguments 
+                  ( ("url" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4007 4018])
+                    ("value" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4019 4032]))                  
+                :type ("unique_ptr" type
+                     (:template-specifier 
+                        ( ("PutResponse" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [3974 4884])
+            ("<<" function
+               (:operator-flag t
+                :arguments 
+                  ( ("os" variable
+                       (:reference 1
+                        :type ("ostream" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4907 4919])
+                    ("value" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Value" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4920 4939]))                  
+                :type ("ostream" type (:type "class") nil nil))
+                nil [4887 5064])
+            ("<<" function
+               (:operator-flag t
+                :arguments 
+                  ( ("os" variable
+                       (:reference 1
+                        :type ("ostream" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5086 5098])
+                    ("node" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Node" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5099 5116]))                  
+                :type ("ostream" type (:type "class") nil nil))
+                nil [5066 5501])
+            ("<<" function
+               (:operator-flag t
+                :arguments 
+                  ( ("os" variable
+                       (:reference 1
+                        :type ("ostream" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5523 5535])
+                    ("node" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("Node" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5536 5553]))                  
+                :type ("ostream" type (:type "class") nil nil))
+                nil [5503 5649]))          
+      :file "etcdclient.cpp"
+      :pointmax 5650
+      :fsize 5649
+      :lastmodtime '(21826 45534 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "etcdclient.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("LIBETCDCLIENT_cxx_" variable (:constant-flag t) nil [36 54])
+            ("vector" include (:system-flag t) nil [56 73])
+            ("string" include (:system-flag t) nil [74 91])
+            ("memory" include (:system-flag t) nil [92 109])
+            ("rapidjson/document.h" include nil nil [110 141])
+            ("std" using (:type ("std" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [143 163])
+            ("etcd" type
+               (:members 
+                  ( ("Host" type
+                       (:prototype t
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [184 195])
+                    ("Session" type
+                       (:prototype t
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [198 212])
+                    ("Node" type
+                       (:prototype t
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [215 226])
+                    ("GetResponse" type
+                       (:prototype t
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [229 247])
+                    ("PutResponse" type
+                       (:prototype t
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [250 268])
+                    ("Session" type
+                       (:members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [411 418])
+                            ("Session" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("hosts" variable (:type ("vector" type
+                                         (:template-specifier 
+                                            ( ("Host" type nil nil nil))                                            
+                                          :type "class")
+                                          nil nil)) (reparse-symbol arg-sub-list) [431 450]))                                  
+                                :type ("Session" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [423 468])
+                            ("get" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("key" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [574 585]))                                  
+                                :type ("unique_ptr" type
+                                     (:template-specifier 
+                                        ( ("GetResponse" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol classsubparts) [546 586])
+                            ("get" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("key" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [676 687])
+                                    ("recursive" variable (:type "bool") (reparse-symbol arg-sub-list) [688 703]))                                  
+                                :type ("unique_ptr" type
+                                     (:template-specifier 
+                                        ( ("GetResponse" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol classsubparts) [648 704])
+                            ("put" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("key" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [857 868])
+                                    ("value" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [869 882]))                                  
+                                :type ("unique_ptr" type
+                                     (:template-specifier 
+                                        ( ("PutResponse" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol classsubparts) [829 883])
+                            ("put" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("key" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1080 1091])
+                                    ("value" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1092 1105])
+                                    ("ttl" variable (:type "int") (reparse-symbol arg-sub-list) [1106 1114]))                                  
+                                :type ("unique_ptr" type
+                                     (:template-specifier 
+                                        ( ("PutResponse" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol classsubparts) [1052 1115])
+                            ("putDirectory" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("key" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1277 1288]))                                  
+                                :type ("unique_ptr" type
+                                     (:template-specifier 
+                                        ( ("PutResponse" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol classsubparts) [1240 1289])
+                            ("putDirectory" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("key" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1331 1342])
+                                    ("ttl" variable (:type "int") (reparse-symbol arg-sub-list) [1343 1351]))                                  
+                                :type ("unique_ptr" type
+                                     (:template-specifier 
+                                        ( ("PutResponse" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol classsubparts) [1294 1352])
+                            ("private" label nil (reparse-symbol classsubparts) [1356 1364])
+                            ("hostNo" variable
+                               (:default-value "0"
+                                :type ("uint" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1369 1385])
+                            ("hosts" variable (:type ("vector" type
+                                 (:template-specifier 
+                                    ( ("Host" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [1390 1409])
+                            ("nextHost" function
+                               (:prototype-flag t
+                                :type ("Host" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1414 1431]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [393 1436])
+                    ("Host" type
+                       (:members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [1519 1526])
+                            ("Host" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("host" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1536 1548])
+                                    ("port" variable (:type "int") (reparse-symbol arg-sub-list) [1549 1558]))                                  
+                                :type ("Host" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1531 1586])
+                            ("getHost" function (:type ("string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1592 1631])
+                            ("getPort" function (:type "int") (reparse-symbol classsubparts) [1636 1672])
+                            ("private" label nil (reparse-symbol classsubparts) [1676 1684])
+                            ("host" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1689 1701])
+                            ("port" variable (:type "int") (reparse-symbol classsubparts) [1706 1715]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [1504 1720])
+                    ("Node" type
+                       (:members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [1810 1817])
+                            ("Node" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("key" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1873 1884])
+                                    ("value" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1894 1907])
+                                    ("modifiedIndex" variable (:type "int") (reparse-symbol arg-sub-list) [1917 1935])
+                                    ("createdIndex" variable (:type "int") (reparse-symbol arg-sub-list) [1945 1962]))                                  
+                                :type ("Node" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1868 2107])
+                            ("Node" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("key" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2118 2129])
+                                    ("nodes" variable (:type ("vector" type
+                                         (:template-specifier 
+                                            ( ("Node" type nil nil nil))                                            
+                                          :type "class")
+                                          nil nil)) (reparse-symbol arg-sub-list) [2139 2158])
+                                    ("modifiedIndex" variable (:type "int") (reparse-symbol arg-sub-list) [2168 2186])
+                                    ("createdIndex" variable (:type "int") (reparse-symbol arg-sub-list) [2196 2213]))                                  
+                                :type ("Node" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2113 2357])
+                            ("getKey" function (:type ("string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2363 2400])
+                            ("getValue" function (:type ("string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2405 2446])
+                            ("getNodes" function (:type ("vector" type
+                                 (:template-specifier 
+                                    ( ("Node" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [2451 2498])
+                            ("getModifiedIndex" function (:type "int") (reparse-symbol classsubparts) [2503 2557])
+                            ("getCreatedIndex" function (:type "int") (reparse-symbol classsubparts) [2562 2614])
+                            ("isDirectory" function (:type "bool") (reparse-symbol classsubparts) [2619 2661])
+                            ("private" label nil (reparse-symbol classsubparts) [2665 2673])
+                            ("key" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2678 2689])
+                            ("value" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2694 2707])
+                            ("nodes" variable (:type ("vector" type
+                                 (:template-specifier 
+                                    ( ("Node" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [2712 2731])
+                            ("isDir" variable (:type "bool") (reparse-symbol classsubparts) [2736 2747])
+                            ("modifiedIndex" variable (:type "int") (reparse-symbol classsubparts) [2752 2770])
+                            ("createdIndex" variable (:type "int") (reparse-symbol classsubparts) [2775 2792]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [1795 2797])
+                    ("ResponseError" type
+                       (:members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [2825 2832])
+                            ("ResponseError" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("errorCode" variable (:type "int") (reparse-symbol arg-sub-list) [2851 2865])
+                                    ("message" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2884 2899])
+                                    ("cause" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2918 2931])
+                                    ("index" variable (:type "int") (reparse-symbol arg-sub-list) [2950 2960]))                                  
+                                :type ("ResponseError" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2837 3048])
+                            ("getErrorCode" function (:type "int") (reparse-symbol classsubparts) [3054 3094])
+                            ("getMessage" function (:type ("string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3099 3138])
+                            ("getCause" function (:type ("string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3143 3178])
+                            ("getIndex" function (:type "int") (reparse-symbol classsubparts) [3183 3215])
+                            ("private" label nil (reparse-symbol classsubparts) [3219 3227])
+                            ("errorCode" variable (:type "int") (reparse-symbol classsubparts) [3232 3246])
+                            ("message" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3251 3266])
+                            ("cause" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3271 3284])
+                            ("index" variable (:type "int") (reparse-symbol classsubparts) [3289 3299]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [2801 3304])
+                    ("GetResponse" type
+                       (:members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [3425 3432])
+                            ("success" function
+                               (:pointer 1
+                                :typemodifiers ("static")
+                                :arguments 
+                                  ( ("node" variable (:type ("unique_ptr" type
+                                         (:template-specifier 
+                                            ( ("Node" type nil nil nil))                                            
+                                          :type "class")
+                                          nil nil)) (reparse-symbol arg-sub-list) [3465 3487]))                                  
+                                :type ("GetResponse" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3437 3543])
+                            ("failure" function
+                               (:pointer 1
+                                :typemodifiers ("static")
+                                :arguments 
+                                  ( ("error" variable (:type ("unique_ptr" type
+                                         (:template-specifier 
+                                            ( ("ResponseError" type nil nil nil))                                            
+                                          :type "class")
+                                          nil nil)) (reparse-symbol arg-sub-list) [3577 3609]))                                  
+                                :type ("GetResponse" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3549 3666])
+                            ("getNode" function
+                               (:pointer 1
+                                :type ("Node" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3672 3716])
+                            ("getError" function
+                               (:pointer 1
+                                :type ("ResponseError" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3721 3776])
+                            ("private" label nil (reparse-symbol classsubparts) [3780 3788])
+                            ("GetResponse" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("node" variable (:type ("unique_ptr" type
+                                         (:template-specifier 
+                                            ( ("Node" type nil nil nil))                                            
+                                          :type "class")
+                                          nil nil)) (reparse-symbol arg-sub-list) [3805 3827])
+                                    ("error" variable (:type ("unique_ptr" type
+                                         (:template-specifier 
+                                            ( ("ResponseError" type nil nil nil))                                            
+                                          :type "class")
+                                          nil nil)) (reparse-symbol arg-sub-list) [3844 3876]))                                  
+                                :type ("GetResponse" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3793 3930])
+                            ("node" variable (:type ("unique_ptr" type
+                                 (:template-specifier 
+                                    ( ("Node" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [3936 3958])
+                            ("error" variable (:type ("unique_ptr" type
+                                 (:template-specifier 
+                                    ( ("ResponseError" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [3963 3995]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [3403 4000])
+                    ("PutResponse" type
+                       (:members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [4161 4168])
+                            ("PutResponse" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("node" variable (:type ("unique_ptr" type
+                                         (:template-specifier 
+                                            ( ("Node" type nil nil nil))                                            
+                                          :type "class")
+                                          nil nil)) (reparse-symbol arg-sub-list) [4185 4207])
+                                    ("prevNode" variable (:type ("unique_ptr" type
+                                         (:template-specifier 
+                                            ( ("Node" type nil nil nil))                                            
+                                          :type "class")
+                                          nil nil)) (reparse-symbol arg-sub-list) [4224 4250])
+                                    ("error" variable (:type ("unique_ptr" type
+                                         (:template-specifier 
+                                            ( ("ResponseError" type nil nil nil))                                            
+                                          :type "class")
+                                          nil nil)) (reparse-symbol arg-sub-list) [4267 4299]))                                  
+                                :type ("PutResponse" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4173 4385])
+                            ("getNode" function
+                               (:pointer 1
+                                :type ("Node" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4391 4435])
+                            ("getPrevNode" function
+                               (:pointer 1
+                                :type ("Node" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4440 4492])
+                            ("getError" function
+                               (:pointer 1
+                                :type ("ResponseError" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4497 4552])
+                            ("private" label nil (reparse-symbol classsubparts) [4556 4564])
+                            ("node" variable (:type ("unique_ptr" type
+                                 (:template-specifier 
+                                    ( ("Node" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [4569 4591])
+                            ("prevNode" variable (:type ("unique_ptr" type
+                                 (:template-specifier 
+                                    ( ("Node" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [4596 4622])
+                            ("error" variable (:type ("unique_ptr" type
+                                 (:template-specifier 
+                                    ( ("ResponseError" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [4627 4659]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [4139 4664]))                  
+                :type "namespace")
+                nil [165 4666])
+            ("<<" function
+               (:prototype-flag t
+                :operator-flag t
+                :arguments 
+                  ( ("os" variable
+                       (:reference 1
+                        :type ("ostream" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4688 4700])
+                    ("node" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("rapidjson::Value" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4701 4730]))                  
+                :type ("ostream" type (:type "class") nil nil))
+                nil [4668 4731])
+            ("<<" function
+               (:prototype-flag t
+                :operator-flag t
+                :arguments 
+                  ( ("os" variable
+                       (:reference 1
+                        :type ("ostream" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4752 4764])
+                    ("node" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("etcd::Node" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4765 4788]))                  
+                :type ("ostream" type (:type "class") nil nil))
+                nil [4732 4789])
+            ("<<" function
+               (:prototype-flag t
+                :operator-flag t
+                :arguments 
+                  ( ("os" variable
+                       (:reference 1
+                        :type ("ostream" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4810 4822])
+                    ("node" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("etcd::Node" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4823 4846]))                  
+                :type ("ostream" type (:type "class") nil nil))
+                nil [4790 4847]))          
+      :file "etcdclient.h"
+      :pointmax 4856
+      :fsize 4855
+      :lastmodtime '(21826 45306 0 0)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("LIBETCDCLIENT_cxx_")
+          )
+))
+  :file "!Users!matt!dev!etcdclient!etcdclient!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

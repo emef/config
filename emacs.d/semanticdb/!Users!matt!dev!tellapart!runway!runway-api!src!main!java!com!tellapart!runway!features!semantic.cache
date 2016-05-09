@@ -1,0 +1,33 @@
+;; Object features/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "features/"
+  :tables (list 
+   (semanticdb-table "ClassLabelExtractor.java"
+    :major-mode 'malabar-mode
+    :tags 
+        '( ("com.tellapart.runway.features" package nil (reparse-symbol package_declaration) [1 39])
+            ("com.tellapart.serverlog.ServerLogEntry" include nil (reparse-symbol import_declaration) [41 87])
+            ("ClassLabelExtractor" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("getLabelFromMatchedAds" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("impression" variable (:type "ServerLogEntry") (reparse-symbol formal_parameter) [168 193])
+                            ("click" variable (:type "ServerLogEntry") (reparse-symbol formal_parameter) [195 215])
+                            ("bid" variable (:type "ServerLogEntry") (reparse-symbol formal_parameter) [223 241]))                          
+                        :type "Integer")
+                        (reparse-symbol abstract_method_declaration) [130 243]))                  
+                :type "interface")
+                (reparse-symbol interface_declaration) [89 245]))          
+    :file "ClassLabelExtractor.java"
+    :pointmax 246
+    :fsize 245
+    :lastmodtime '(21390 23935 0 0)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!Users!matt!dev!tellapart!runway!runway-api!src!main!java!com!tellapart!runway!features!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

@@ -31,7 +31,9 @@
 (define-key my-keys-minor-mode-map (kbd "C-M-t") 'backward-paragraph)
 (define-key my-keys-minor-mode-map (kbd "M-n") 'forward-char)
 (define-key my-keys-minor-mode-map (kbd "M-u") 'forward-word)
-(define-key my-keys-minor-mode-map (kbd "M-4") 'move-end-of-line)
+(define-key my-keys-minor-mode-map (kbd "M-.") 'move-end-of-line)
+(when window-system
+  (define-key my-keys-minor-mode-map (kbd "C-.") 'move-end-of-line))
 (define-key my-keys-minor-mode-map (kbd "C-d") 'backward-sexp)
 (define-key my-keys-minor-mode-map (kbd "C-l") 'goto-line)
 (define-key my-keys-minor-mode-map (kbd "C-p") 'isearch-backward)
@@ -41,6 +43,9 @@
 (define-key my-keys-minor-mode-map (kbd "M-1") 'select-current-line)
 (define-key my-keys-minor-mode-map (kbd "M-2") 'select-current-word)
 (define-key my-keys-minor-mode-map (kbd "M-3") 'comment-dwim)
+
+(define-key my-keys-minor-mode-map (kbd "C-x C-M->") 'find-tag) ; bind to some unused placeholder
+(define-key my-keys-minor-mode-map (kbd "C-f") (kbd "C-x C-M-> <return>"))
 
 (define-key lisp-mode-map (kbd "M-<up>") 'slime-repl-previous-input)
 (define-key lisp-mode-map (kbd "M-<down>") 'slime-repl-next-input)
@@ -59,8 +64,7 @@
     (skip-chars-backward "-_A-Za-z0-9")
     (setq pt (point))
     (skip-chars-forward "-_A-Za-z0-9")
-    (set-mark pt)
-    ))
+    (set-mark pt)))
 
 (define-minor-mode my-keys-minor-mode
   "A minor mode to override major mode keybindings"

@@ -1,0 +1,1181 @@
+;; Object util/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "util/"
+  :tables (list 
+   (semanticdb-table "misc_util.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("\"\"\"Miscellaneous utility functions.
+\"\"\"" code nil nil [1 40])
+            ("__copyright__" variable nil nil [42 115])
+            ("base64" include nil nil [117 130])
+            ("calendar" include nil nil [131 146])
+            ("collections" include nil nil [147 165])
+            ("contextlib" include nil nil [166 203])
+            ("datetime" include nil nil [204 219])
+            ("glob" include nil nil [220 231])
+            ("hashlib" include nil nil [232 246])
+            ("inspect" include nil nil [247 261])
+            ("logging" include nil nil [262 276])
+            ("math" include nil nil [277 288])
+            ("os" include nil nil [289 298])
+            ("pkgutil" include nil nil [299 313])
+            ("re" include nil nil [314 323])
+            ("subprocess" include nil nil [324 341])
+            ("sys" include nil nil [342 352])
+            ("tarfile" include nil nil [353 367])
+            ("tempfile" include nil nil [368 383])
+            ("time" include nil nil [384 395])
+            ("types" include nil nil [396 424])
+            ("STANDARD_LOG_FORMAT" variable nil nil [426 546])
+            ("MEMOIZE_CACHE_LIMIT" variable nil nil [548 574])
+            ("BaseBunch" type
+               (:documentation "A simple container for named fields/values.
+  "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" code nil (reparse-symbol indented_block_body) [708 736])
+                            ("if" code nil (reparse-symbol indented_block_body) [741 793]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [671 675])
+                            ("from_dict" variable nil (reparse-symbol function_parameters) [677 686])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [693 701]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [658 793])
+                    ("__eq__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [807 811])
+                            ("other" variable nil (reparse-symbol function_parameters) [813 818]))                          )
+                        (reparse-symbol indented_block_body) [796 899])
+                    ("__ne__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [913 917])
+                            ("other" variable nil (reparse-symbol function_parameters) [919 924]))                          )
+                        (reparse-symbol indented_block_body) [902 961])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [977 981]))                          )
+                        (reparse-symbol indented_block_body) [964 1081])
+                    ("__getitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1100 1104])
+                            ("obj" variable nil (reparse-symbol function_parameters) [1106 1109]))                          )
+                        (reparse-symbol indented_block_body) [1084 1142])
+                    ("__iter__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1158 1162]))                          )
+                        (reparse-symbol indented_block_body) [1145 1201])
+                    ("__contains__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1221 1225])
+                            ("key" variable nil (reparse-symbol function_parameters) [1227 1230]))                          )
+                        (reparse-symbol indented_block_body) [1204 1265])
+                    ("__nonzero__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1284 1288]))                          )
+                        (reparse-symbol indented_block_body) [1268 1325])
+                    ("__len__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1340 1344]))                          )
+                        (reparse-symbol indented_block_body) [1328 1377])
+                    ("keys" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1389 1393]))                          )
+                        (reparse-symbol indented_block_body) [1380 1428])
+                    ("values" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1442 1446]))                          )
+                        (reparse-symbol indented_block_body) [1431 1483])
+                    ("get" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1494 1498])
+                            ("attr" variable nil (reparse-symbol function_parameters) [1500 1504])
+                            ("default" variable nil (reparse-symbol function_parameters) [1506 1513]))                          )
+                        (reparse-symbol indented_block_body) [1486 1565])
+                    ("items" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1578 1582]))                          )
+                        (reparse-symbol indented_block_body) [1568 1618])
+                    ("iterkeys" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1634 1638]))                          )
+                        (reparse-symbol indented_block_body) [1621 1677])
+                    ("itervalues" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1695 1699]))                          )
+                        (reparse-symbol indented_block_body) [1680 1740])
+                    ("iteritems" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1757 1761]))                          )
+                        (reparse-symbol indented_block_body) [1743 1801])
+                    ("ToDict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1815 1819]))                          
+                        :documentation "Returns the fields and values as a copy of the underlying
+    dict structure.
+    ")
+                        (reparse-symbol indented_block_body) [1804 1946]))                  
+                :type "class")
+                nil [576 1946])
+            ("ImmutableBunch" type
+               (:documentation "An immutable BaseBunch that is NOT hashable.
+  "
+                :superclasses ("BaseBunch")
+                :members 
+                  ( ("__setattr__" variable nil (reparse-symbol indented_block_body) [2095 2113])
+                    ("__delattr__" variable nil (reparse-symbol indented_block_body) [2116 2134])
+                    ("__setitem__" variable nil (reparse-symbol indented_block_body) [2137 2155])
+                    ("__delitem__" variable nil (reparse-symbol indented_block_body) [2158 2176])
+                    ("__hash__" variable nil (reparse-symbol indented_block_body) [2179 2194]))                  
+                :type "class")
+                nil [1947 2195])
+            ("FrozenBunch" type
+               (:documentation "An ImmutableBunch that IS hashable.
+  "
+                :superclasses ("ImmutableBunch")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [2330 2394])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2399 2459]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2293 2297])
+                            ("from_dict" variable nil (reparse-symbol function_parameters) [2299 2308])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [2315 2323]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2280 2460])
+                    ("__hash__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2476 2480]))                          )
+                        (reparse-symbol indented_block_body) [2463 2505]))                  
+                :type "class")
+                nil [2196 2505])
+            ("Bunch" type
+               (:documentation "A mutable BaseBunch. Should not be hashable since it's mutable.
+  "
+                :superclasses ("BaseBunch")
+                :members 
+                  ( ("__setitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2623 2627])
+                            ("obj" variable nil (reparse-symbol function_parameters) [2629 2632])
+                            ("val" variable nil (reparse-symbol function_parameters) [2634 2637]))                          )
+                        (reparse-symbol indented_block_body) [2607 2669])
+                    ("__delitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2688 2692])
+                            ("obj" variable nil (reparse-symbol function_parameters) [2694 2697]))                          )
+                        (reparse-symbol indented_block_body) [2672 2727]))                  
+                :type "class")
+                nil [2506 2727])
+            ("RecursiveDictToBunch" function
+               (:documentation "Given a dict object, recursively converts to Bunch objects.
+
+  Converts a dict object {'a' : 1, 'b' : 2} to a Bunch object with parameters
+  a = 1, and b = 2. If any of the values in the Bunch is a list, try, to convert
+  that list to a list of bunches.
+
+
+  Args:
+    data - Dict (possibly nested), to convert to Bunch objects.
+
+  Returns:
+    A Bunch object with the dict keys accessible as object attributes.
+  "
+                :arguments 
+                  ( ("data" variable nil (reparse-symbol function_parameters) [2753 2757]))                  )
+                nil [2728 3441])
+            ("SortedSet" type
+               (:documentation "SortedSet associates a score with each value in the set.
+
+  Not super fast or efficient, but it will do...
+  "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [3611 3635])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3640 3691]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3600 3604]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [3587 3692])
+                    ("Add" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3703 3707])
+                            ("value" variable nil (reparse-symbol function_parameters) [3709 3714])
+                            ("score" variable nil (reparse-symbol function_parameters) [3716 3721]))                          
+                        :documentation "Add/update a value with the provided score.
+
+    Args:
+      value - The value to add to the set.
+      score - The score of the value.
+
+    Returns: Whether or not the value was newly added.
+    ")
+                        (reparse-symbol indented_block_body) [3695 4263])
+                    ("Remove" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4277 4281])
+                            ("value" variable nil (reparse-symbol function_parameters) [4283 4288]))                          
+                        :documentation "Remove a value from the SortedSet.
+
+    Args:
+      value - Value to remove.
+
+    Returns:
+      Whether the value was in the set to remove.
+    ")
+                        (reparse-symbol indented_block_body) [4266 4644])
+                    ("RangeByScore" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4664 4668])
+                            ("min" variable nil (reparse-symbol function_parameters) [4670 4673])
+                            ("max" variable nil (reparse-symbol function_parameters) [4675 4678])
+                            ("start" variable nil (reparse-symbol function_parameters) [4680 4685])
+                            ("num" variable nil (reparse-symbol function_parameters) [4692 4695])
+                            ("with_scores" variable nil (reparse-symbol function_parameters) [4702 4713])
+                            ("score_cast_func" variable nil (reparse-symbol function_parameters) [4740 4755]))                          
+                        :documentation "Returns a range of values ordered by score.
+
+    Args:
+      min - The minimum score to include in the result.
+      max - The maximum score to include in the result.
+      start - The start index of the interval to slice by. (both 'start' and
+              'num' arguments have to be specified for this to have effect)
+      num - The number of elements to return from the interval. (both 'start'
+            and 'num' arguments have to be specified for this to have effect)
+      with_scores - If True, return the score with each value as a tuple
+                    (value, score)
+      score_cast_func - The function to call on the score.
+    ")
+                        (reparse-symbol indented_block_body) [4647 6127])
+                    ("RemoveRangeByScore" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6153 6157])
+                            ("min" variable nil (reparse-symbol function_parameters) [6159 6162])
+                            ("max" variable nil (reparse-symbol function_parameters) [6164 6167]))                          
+                        :documentation "Remove values from the Sorted Set between min and max (inclusive).
+
+    Args:
+      min - Minimum score of the range.
+      max - Maximum score of the range.
+
+    Returns:
+      The number of values removed.
+    ")
+                        (reparse-symbol indented_block_body) [6130 6782]))                  
+                :type "class")
+                nil [3442 6782])
+            ("ToCamelCase" function
+               (:documentation "Convert a string delimited with spaces or underscores to space delimited
+  with the first letter of each word capitalized.
+
+  Args:
+    string - String to convert.
+
+  Returns:
+    Converted string.
+  "
+                :arguments 
+                  ( ("string" variable nil (reparse-symbol function_parameters) [6799 6805]))                  )
+                nil [6783 7139])
+            ("PerformTimedOperation" function
+               (:documentation "Calls a function with the given arguments and returns the elapsed time
+  along with the function's return value.
+
+  Args:
+    fn - A Python callable to invoke.
+    *args, **kwargs - The arguments to pass to 'fn'.
+
+  Returns:
+    A (return_value, elapsed_time) tuple, where 'return_value' is the value
+    returned from the called function ('fn'), and 'elapsed_time' is the elapsed
+    time in milliseconds, rounded to the nearest millisecond.
+  "
+                :arguments 
+                  ( ("fn" variable nil (reparse-symbol function_parameters) [7166 7168])
+                    ("args" variable nil (reparse-symbol function_parameters) [7170 7175])
+                    ("kwargs" variable nil (reparse-symbol function_parameters) [7177 7185]))                  )
+                nil [7140 7808])
+            ("RunLocalCommand" function
+               (:documentation "Runs a command on the local system.
+
+  This is like fabric.api.local(), except all output from the command
+  is sent to STDOUT and STDERR.
+  The output may be buffered locally before it is written to STDOUT, if
+  the STDOUT is not a real file object (for example, it might be StringIO).
+  "
+                :arguments 
+                  ( ("command" variable nil (reparse-symbol function_parameters) [7829 7836]))                  )
+                nil [7809 8798])
+            ("GetModuleLogger" function
+               (:documentation "Create a logger that writes through the configured root logger.
+
+  Args:
+    logger_name - The hierarchical logger name passed to logging.getLogger().
+        If None, the module name is inferred by looking at the stack.
+    level - The logging level to use.
+
+  Returns:
+    Logger object.
+  "
+                :arguments 
+                  ( ("logger_name" variable nil (reparse-symbol function_parameters) [8819 8830]))                  )
+                nil [8799 9389])
+            ("MakeStreamLogger" function
+               (:documentation "Create a logger that writes to a stream.
+
+  Args:
+    logger_name - The hierarchical logger name passed to logging.getLogger().
+                  If None, the root logger is used.
+    stream - The stream object to write to (defaults to sys.stderr).
+    format - The format string to use for formatting the log message.
+    level - The logging level to use.
+
+  Returns:
+    The logger object with a StreamHandler attached to it.
+  "
+                :arguments 
+                  ( ("logger_name" variable nil (reparse-symbol function_parameters) [9411 9422])
+                    ("stream" variable nil (reparse-symbol function_parameters) [9429 9435])
+                    ("format" variable nil (reparse-symbol function_parameters) [9469 9475])
+                    ("level" variable nil (reparse-symbol function_parameters) [9497 9502]))                  )
+                nil [9390 10249])
+            ("MakeFileLogger" function
+               (:documentation "Creates a logger that writes to one file.
+
+  Args:
+    logger_name - The hierarchical logger name passed to logging.getLogger().
+                  If None, the root logger is used.
+    log_file_path - The file to log to.
+    format - The format string to use for each log message.
+    level - The logging level to use.
+    mode - The FileHandler mode to create a FileHandler with.
+
+  Returns:
+    The logger object with a FileHandler attached to it.
+  "
+                :arguments 
+                  ( ("logger_name" variable nil (reparse-symbol function_parameters) [10269 10280])
+                    ("log_file_path" variable nil (reparse-symbol function_parameters) [10282 10295])
+                    ("format" variable nil (reparse-symbol function_parameters) [10297 10303])
+                    ("level" variable nil (reparse-symbol function_parameters) [10344 10349])
+                    ("mode" variable nil (reparse-symbol function_parameters) [10364 10368]))                  )
+                nil [10250 11144])
+            ("MakeRotatingFileLogger" function
+               (:documentation "Create a rotating-file logger.
+
+  Args:
+    logger_name - The hierarchical logger name passed to logging.getLogger().
+    log_file_base_path - The base path of the log files.
+    log_format - The format string to use for formatting the log message.
+    level - The logging level to use.
+    max_bytes - Maximum number of bytes for log file.
+
+  Returns:
+    The logger object with a RotatingFileHandler attached to it.
+  "
+                :arguments 
+                  ( ("logger_name" variable nil (reparse-symbol function_parameters) [11172 11183])
+                    ("log_file_base_path" variable nil (reparse-symbol function_parameters) [11185 11203])
+                    ("log_format" variable nil (reparse-symbol function_parameters) [11232 11242])
+                    ("level" variable nil (reparse-symbol function_parameters) [11264 11269])
+                    ("max_bytes" variable nil (reparse-symbol function_parameters) [11311 11320]))                  )
+                nil [11145 12109])
+            ("TarAndZipFiles" function
+               (:documentation "Returns a tarred-zipped ball of the provided files.
+
+  Args:
+    root_dir - Root of the tree that contains the files to tar.
+    file_list - List of files to be zipped.
+    arcnames - The names of the files as they should be added to the archive
+    dereference - If False, hardlinks and softlinks should be added to the
+                  archive. If True, their target file contents are added
+                  instead. See documentation for tarfile.
+    tmp_dir - The temporary directory to use when creating a temporary file.
+              If not specified, will use the system default temp directory.
+
+  Returns:
+    File object that contails the tar-zip ball. The caller assumes ownership
+    and should close the returned file object.
+  "
+                :arguments 
+                  ( ("root_dir" variable nil (reparse-symbol function_parameters) [12129 12137])
+                    ("file_list" variable nil (reparse-symbol function_parameters) [12139 12148])
+                    ("arcnames" variable nil (reparse-symbol function_parameters) [12150 12158])
+                    ("dereference" variable nil (reparse-symbol function_parameters) [12184 12195])
+                    ("tmp_dir" variable nil (reparse-symbol function_parameters) [12202 12209]))                  )
+                nil [12110 13433])
+            ("GetFilesByNameFromTarball" function
+               (:documentation "Returns a dict from the filename to respective content of the files
+  present in the tarball.
+
+  One of fname and fileobj should non null and will point to the tarball that
+  will be parsed.
+
+  Args:
+    fname - Path to tarball
+    fileobj - File-like object which can be read from.
+
+  Return:
+    A dict from the name of the file to the respective content.
+  "
+                :arguments 
+                  ( ("fname" variable nil (reparse-symbol function_parameters) [13464 13469])
+                    ("fileobj" variable nil (reparse-symbol function_parameters) [13476 13483]))                  )
+                nil [13434 14150])
+            ("GetFilesByNameFromDir" function
+               (:documentation "Returns the files by name that are present in the provided directory.
+
+  Args:
+    dir - Directory which stores the files.
+
+  Return:
+    A dict from the name of the file to the respective content.
+  "
+                :arguments 
+                  ( ("dir" variable nil (reparse-symbol function_parameters) [14177 14180]))                  )
+                nil [14151 14654])
+            ("_DATETIME_RE" variable nil nil [14699 14832])
+            ("FastDatetimeParse" function
+               (:documentation "Parses a datetime string faster than strptime using a compiled regexp.
+  "
+                :arguments 
+                  ( ("time_str" variable nil (reparse-symbol function_parameters) [14856 14864]))                  )
+                nil [14834 15264])
+            ("SecsSinceEpoch" function
+               (:documentation "Returns the number of seconds since UNIX epoch for the provided
+  datetime object in local time.
+
+  NOTE: This function will ignore any timezones set and assume the given time is
+  in local time.
+
+  Args:
+    datetime_obj - Datetime object for which seconds since epoch is computed
+
+  Returns:
+    The number of seconds since UNIX epoch.
+  "
+                :arguments 
+                  ( ("datetime_obj" variable nil (reparse-symbol function_parameters) [15284 15296]))                  )
+                nil [15265 15700])
+            ("UTCSecsSinceEpoch" function
+               (:documentation "Returns the number of seconds since UNIX epoch for the provided
+  UTC datetime object.
+
+  Args:
+    utc_datetime - Datetime object in UTC, not local time for which seconds
+                   since epoch is computed
+
+  Returns:
+    The number of seconds since UNIX epoch.
+  "
+                :arguments 
+                  ( ("utc_datetime" variable nil (reparse-symbol function_parameters) [15723 15735]))                  )
+                nil [15701 16076])
+            ("CompareDatetime" function
+               (:documentation "Compares datetime objects irrespective of whether the objects are
+  datetime.datetime or datetime.date.
+
+  Args:
+    date1 - First date to be compared
+    date2 - Second date to be compared
+
+  Returns:
+    Zero if the two objects are equal, a negative value if date1 < date2,
+    and a positive value if date1 > date2.
+  "
+                :arguments 
+                  ( ("date1" variable nil (reparse-symbol function_parameters) [16097 16102])
+                    ("date2" variable nil (reparse-symbol function_parameters) [16104 16109]))                  )
+                nil [16077 16497])
+            ("TimeDeltaDivide" function
+               (:documentation "Perform division of two different time deltas.
+
+  Args:
+    td1 - Numerator of the division
+    td2 - Denominator of the division
+
+  Returns:
+    A float that represents the number of time deltas td2s that can
+    be contained within the time delta td1.
+  "
+                :arguments 
+                  ( ("td1" variable nil (reparse-symbol function_parameters) [16518 16521])
+                    ("td2" variable nil (reparse-symbol function_parameters) [16523 16526]))                  )
+                nil [16498 16898])
+            ("DateRangeIterator" function
+               (:documentation "An iterator to traverse between two datetime objects.
+  Args:
+    frm - Start date.
+    to - End date.
+    delta - datetime.timedelta between dates.
+    inclusive - if True include final date.
+  Yields:
+    A datetime.datetime object until 'to' is reached.
+  "
+                :arguments 
+                  ( ("frm" variable nil (reparse-symbol function_parameters) [16921 16924])
+                    ("to" variable nil (reparse-symbol function_parameters) [16926 16928])
+                    ("delta" variable nil (reparse-symbol function_parameters) [16930 16935])
+                    ("inclusive" variable nil (reparse-symbol function_parameters) [16986 16995]))                  )
+                nil [16899 17446])
+            ("LocalKeyContainer" type
+               (:documentation "Utility that provides access to keys stored in a container stored in the
+  local filesystem.
+  "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"Initializes using the container object in the provided file.
+
+    One of fname, fileobj, or key_dir should be non-null and point to a file that
+    contains the keys.
+
+    The container file is a tar archive file that contains a 'meta' file that
+    describes the other files and keys, and a 'authorized_users' file that
+    contains the set of users authorized to make requests to the controller
+    along with the respective groups and permissions.
+
+    Args:
+      fname - Name of file containing the keys.
+      fileobj - File-like object which can be read to parse the keys.
+      key_dir - Directory which contains the meta file and respective keys
+    \"\"\"" code nil (reparse-symbol indented_block_body) [17650 18315])
+                            ("if" code nil (reparse-symbol indented_block_body) [18395 18527])
+                            ("if" code nil (reparse-symbol indented_block_body) [18531 18768])
+                            ("if" code nil (reparse-symbol indented_block_body) [18773 18926])
+                            ("if" code nil (reparse-symbol indented_block_body) [18992 19099])
+                            ("self" variable nil (reparse-symbol indented_block_body) [19103 19261])
+                            ("self" variable nil (reparse-symbol indented_block_body) [19266 19289])
+                            ("if" code nil (reparse-symbol indented_block_body) [19294 19433]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [17599 17603])
+                            ("fname" variable nil (reparse-symbol function_parameters) [17605 17610])
+                            ("fileobj" variable nil (reparse-symbol function_parameters) [17617 17624])
+                            ("key_dir" variable nil (reparse-symbol function_parameters) [17631 17638]))                          
+                        :documentation "Initializes using the container object in the provided file.
+
+    One of fname, fileobj, or key_dir should be non-null and point to a file that
+    contains the keys.
+
+    The container file is a tar archive file that contains a 'meta' file that
+    describes the other files and keys, and a 'authorized_users' file that
+    contains the set of users authorized to make requests to the controller
+    along with the respective groups and permissions.
+
+    Args:
+      fname - Name of file containing the keys.
+      fileobj - File-like object which can be read to parse the keys.
+      key_dir - Directory which contains the meta file and respective keys
+    "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [17586 19433])
+                    ("_ParseCredentialsFromMetaFile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [19470 19474])
+                            ("meta_file" variable nil (reparse-symbol function_parameters) [19476 19485])
+                            ("all_files_by_name" variable nil (reparse-symbol function_parameters) [19487 19504])
+                            ("key_dir" variable nil (reparse-symbol function_parameters) [19506 19513]))                          
+                        :documentation "Parse the credentials listed in the meta file.
+
+    Lines in this file starting with '#' are treated as comments and ignored.
+    The first line contains a short description of the file followed by a
+    version number of the file.  The following lines contain 3 comma separated
+    elements (name, type, value) where 'type' is one of 'file' or 'value'.
+    Following the 3 required values may be an arbitrary number of credential
+    specific modifiers.
+
+    Supported modifiers include:
+    aws_key_server_access - If true, specifies that the credential can be accessed
+                            by any of the other TellApart servers in AWS.
+
+    Args:
+      meta_file - Meta file containing metadata about the stored credentials
+      all_files_by_name - Dict containing all the files mapped from the
+                          respective name
+      key_dir - If not None, specifies the local directory where the keys are
+                present.
+
+    Returns:
+      A dictionary from the credential name to the credential's value.
+    ")
+                        (reparse-symbol indented_block_body) [19436 21488])
+                    ("_ParseAuthorizedUsers" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [21517 21521])
+                            ("auth_users_definition" variable nil (reparse-symbol function_parameters) [21523 21544]))                          
+                        :documentation "Parse the set of users authorized to access the keys from the server.
+
+    Lines in this file starting with '#' are treated as comments and ignored.
+    The first line contains a short description of the file followed by a
+    version number of the file.  The following lines contain comma separated
+    values.  The first value in the line specifies if it's a group/user, the
+    second value is the name of the group or user.
+
+    The other lines contain the definitions of the groups and users.
+    Group definition: comma-separated definition with first element 'group',
+                      the second element is the name, and the other elements
+                      are regular expressions matching the credentials to be
+                      served for the respective group.
+    User definition: comma-separated definition with first element 'user',
+                     the second element is the identity of the user, and
+                     the rest of the elements are the user's groups.
+
+    Args:
+      auth_users_definition - Definition of the set of users authorized to read
+                              the keys
+
+    Returns:
+      The authorized user definition.
+    ")
+                        (reparse-symbol indented_block_body) [21491 23386]))                  
+                :type "class")
+                nil [17447 23386])
+            ("CtrWeightedExpSmoothing" function
+               (:documentation " Central exponential smoothing by average of forward/backward smoothing
+  where S1(i) = (1 - weight) * X(i) + weight * S1(i +/- 1) depending on
+  the direction.
+  The weight is in place to apply heavier smoothing to components on the list
+  that has less data points (usually at the ends)
+  "
+                :arguments 
+                  ( ("ctr_list" variable nil (reparse-symbol function_parameters) [23415 23423])
+                    ("max_smoothing_ratio" variable nil (reparse-symbol function_parameters) [23425 23444])
+                    ("weight_adj_base" variable nil (reparse-symbol function_parameters) [23478 23493]))                  )
+                nil [23387 24350])
+            ("ExponentialMovingAvg" function
+               (:documentation " Implementation of an exponential moving average function with smoothing
+  weight function to determine amount of smoothing required and a value function
+  to extract a value if it's not the only element in the list
+
+  Args:
+    value_list - list of values
+    max_smoothing_ratio - the maximum smoothing any element can have
+    val_fn - value extractor function
+
+  Returns:
+    A list of flows in the same order as the incoming list after the smooth fn
+        S1(i) = (1 - weight) * X(i) + weight * S1(i - 1)
+    has been applied
+  "
+                :arguments 
+                  ( ("value_list" variable nil (reparse-symbol function_parameters) [24376 24386])
+                    ("max_smoothing_ratio" variable nil (reparse-symbol function_parameters) [24388 24407])
+                    ("val_fn" variable nil (reparse-symbol function_parameters) [24413 24419])
+                    ("smoothing_weight_fn" variable nil (reparse-symbol function_parameters) [24451 24470]))                  )
+                nil [24351 25455])
+            ("DynamicCumulate" function
+               (:documentation " Dynamically accumulate a value until the end condition is met. This is
+  useful for accumulating data to smooth out noise while using as little data
+  as possible (so trend is more meaningful)
+
+  Args:
+    value_list - list of values
+    end_cond_fn - function for evaluating if we can stop accumulating
+    val_fn - value extractor function (val, prev_val)
+    base_val - the base value
+  Returns:
+    (accumulated value list, True if the value passed the end_cond_fn)
+  "
+                :arguments 
+                  ( ("value_list" variable nil (reparse-symbol function_parameters) [25476 25486])
+                    ("end_cond_fn" variable nil (reparse-symbol function_parameters) [25488 25499])
+                    ("cum_fn" variable nil (reparse-symbol function_parameters) [25506 25512])
+                    ("base_val" variable nil (reparse-symbol function_parameters) [25539 25547]))                  )
+                nil [25456 26503])
+            ("GetChangeRatio" function (:arguments 
+              ( ("org" variable nil (reparse-symbol function_parameters) [26523 26526])
+                ("changed" variable nil (reparse-symbol function_parameters) [26528 26535]))              ) nil [26504 26585])
+            ("partition" function
+               (:documentation "Partitions iterable into two lists based on the value of filter_fn.
+
+  This acts like the python built-in filter(), except that it returns two lists,
+  the first containing all elements of iterable for which filter_fn(iterable) is
+  True (i.e. the result of the filter() built-in),
+  and the second containing all elements for which filter_fn(iterable) is False.
+
+  Args:
+    filter_fn - a function taking one argument and returning a boolean.
+    iterable - the iterable to partition.
+  "
+                :arguments 
+                  ( ("filter_fn" variable nil (reparse-symbol function_parameters) [26600 26609])
+                    ("iterable" variable nil (reparse-symbol function_parameters) [26611 26619]))                  )
+                nil [26586 27310])
+            ("partition_dict" function
+               (:documentation "Partitions dictionary into two dicts based on the value of filter_fn.
+
+  This acts like the partition() call above, but operating on the keys of the
+  dictionary. It returns two dicts, the first containing all elements of
+  dictionary for which filter_fn(key) is True, and the second containing
+  all elements for which filter_fn(key) is False.
+
+  Args:
+    filter_fn - a function taking one argument and returning a boolean.
+    dictionary - the dictionary to partition.
+  "
+                :arguments 
+                  ( ("filter_fn" variable nil (reparse-symbol function_parameters) [27330 27339])
+                    ("dictionary" variable nil (reparse-symbol function_parameters) [27341 27351]))                  )
+                nil [27311 28041])
+            ("partition_dict_by_key" function
+               (:documentation "Filter dictionary into based on the value of filter_fn and return the
+  excluded keys.
+
+  Args:
+    filter_fn - a function taking one argument and returning a boolean.
+    dictionary - the dictionary to partition.
+
+   Returns:
+    A dict for which every key returned True when passed to filter_fn.
+    The set of keys which returned False when passed to filter_fn.
+  "
+                :arguments 
+                  ( ("filter_fn" variable nil (reparse-symbol function_parameters) [28068 28077])
+                    ("dictionary" variable nil (reparse-symbol function_parameters) [28079 28089]))                  )
+                nil [28042 28671])
+            ("CanonicalizeAndEncodeToByteString" function
+               (:documentation "Canonicalize and encode an input str into a byte_str with a certain length.
+
+  Args:
+    input_str - The input str.
+    output_length - The length of the output byte string.
+
+  Returns:
+    An output byte string with length output_length.
+  "
+                :arguments 
+                  ( ("input_str" variable nil (reparse-symbol function_parameters) [28710 28719])
+                    ("output_length" variable nil (reparse-symbol function_parameters) [28721 28734]))                  )
+                nil [28672 29356])
+            ("IsAlmostEqual" function
+               (:documentation "Checks if two numbers are almost equal, to a number of decimal places.
+
+  Args:
+    num1 - First number to check.
+    num2 - Second number to check.
+    places - Number of decimal places that num1 and num2 must be equal to.
+
+  Returns:
+    bool, whether num1 and num2 are close enough in value or not.
+  "
+                :arguments 
+                  ( ("num1" variable nil (reparse-symbol function_parameters) [29375 29379])
+                    ("num2" variable nil (reparse-symbol function_parameters) [29381 29385])
+                    ("places" variable nil (reparse-symbol function_parameters) [29387 29393]))                  )
+                nil [29357 29757])
+            ("VarzFunctionTimer" type
+               (:documentation "Decorator class which will time the decorated function and post the values
+  (in milliseconds) to a varz
+  "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+    Arguments:
+      varz - Initializes varz object to record timed values to
+    \"\"\"" code nil (reparse-symbol indented_block_body) [29939 30028])
+                            ("self" variable nil (reparse-symbol indented_block_body) [30033 30049]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [29922 29926])
+                            ("varz" variable nil (reparse-symbol function_parameters) [29928 29932]))                          
+                        :documentation "
+    Arguments:
+      varz - Initializes varz object to record timed values to
+    "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [29909 30050])
+                    ("__call__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30066 30070])
+                            ("f" variable nil (reparse-symbol function_parameters) [30072 30073]))                          )
+                        (reparse-symbol indented_block_body) [30053 30288]))                  
+                :type "class")
+                nil [29758 30288])
+            ("VarzTimer" type
+               (:documentation "Object to be used with the 'with' statement and a Varz object to measure
+  the execution time of a block of code.
+
+  E.g.
+  with VarzTimer(varz_client.Varz('name')):
+    ... [some code] ...
+  "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+    Args:
+      varz_object - varz_client.Varz like proxy object.
+      use_millis - If True, record in milliseconds (instead of seconds).
+    \"\"\"" code nil (reparse-symbol indented_block_body) [30571 30721])
+                            ("self" variable nil (reparse-symbol indented_block_body) [30726 30756])
+                            ("self" variable nil (reparse-symbol indented_block_body) [30761 30789])
+                            ("self" variable nil (reparse-symbol indented_block_body) [30794 30811]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30530 30534])
+                            ("varz_object" variable nil (reparse-symbol function_parameters) [30536 30547])
+                            ("use_millis" variable nil (reparse-symbol function_parameters) [30549 30559]))                          
+                        :documentation "
+    Args:
+      varz_object - varz_client.Varz like proxy object.
+      use_millis - If True, record in milliseconds (instead of seconds).
+    "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [30517 30812])
+                    ("__enter__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30829 30833]))                          )
+                        (reparse-symbol indented_block_body) [30815 30865])
+                    ("__exit__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [30881 30885])
+                            ("type" variable nil (reparse-symbol function_parameters) [30887 30891])
+                            ("value" variable nil (reparse-symbol function_parameters) [30893 30898])
+                            ("traceback" variable nil (reparse-symbol function_parameters) [30900 30909]))                          )
+                        (reparse-symbol indented_block_body) [30868 31039]))                  
+                :type "class")
+                nil [30289 31039])
+            ("memoized" function
+               (:documentation "Decorator class which memoizes a function's return value.
+
+  If the arguments to the function are not hashable, a TypeError will be thrown.
+
+  NOTE: The return value for the fn should be immutable unless there's a good
+        reason for it not to be.
+  "
+                :arguments 
+                  ( ("fn" variable nil (reparse-symbol function_parameters) [31053 31055]))                  )
+                nil [31040 31835])
+            ("OrderedDedupe" function
+               (:documentation "Dedupe the input list, while preserving order.
+
+  Args:
+    to_dedupe - Iterable of objects to dedupe.
+  Returns:
+    deduped - List of deduped input list, with order preserved.
+  "
+                :arguments 
+                  ( ("to_dedupe" variable nil (reparse-symbol function_parameters) [31854 31863]))                  )
+                nil [31836 32161])
+            ("ScaleVal" function
+               (:documentation "Scales an integer value by the multiplier.
+
+  Args:
+    value - The value to be scaled.
+    multiplier - The multiplier to scale by.
+
+  Returns: The int ceiling of the value scaled by the multiplier.
+  "
+                :arguments 
+                  ( ("value" variable nil (reparse-symbol function_parameters) [32175 32180])
+                    ("multiplier" variable nil (reparse-symbol function_parameters) [32182 32192]))                  )
+                nil [32162 32450])
+            ("CanonicalizeSku" function
+               (:documentation "Canonicalizes a product sku.
+
+  Args:
+    sku - The sku to canonicalize.
+    uppercase - Whether or not to uppercase the sku. There shouldn't be much
+                reason to set this to False, except for legacy reasons.
+
+  Returns:
+    The canonicalized sku.
+  "
+                :arguments 
+                  ( ("sku" variable nil (reparse-symbol function_parameters) [32471 32474])
+                    ("uppercase" variable nil (reparse-symbol function_parameters) [32476 32485]))                  )
+                nil [32451 32878])
+            ("RunAndGetCommandOutput" function
+               (:documentation "Execute command using subprocess.Popen.
+
+  Args:
+    command - The command to be executed.
+
+  Returns:
+    A tuple of the stdout and stderr data resulting from running the command.
+  "
+                :arguments 
+                  ( ("command" variable nil (reparse-symbol function_parameters) [32906 32913]))                  )
+                nil [32879 33543])
+            ("Deployer" type
+               (:documentation "Deployer copies files to a remote host using scp.
+
+  Files are added to a tarball, copied over, and then unzipped."
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"Create a Deployer for a specific remote user and host.
+
+    Args:
+      remote_user - the remote user to scp as.
+      remote_hostname - the hostname to copy to.
+      ssh_options - a string of optiosns to append to ssh/scp commands.
+    \"\"\"" code nil (reparse-symbol indented_block_body) [33764 34008])
+                            ("self" variable nil (reparse-symbol indented_block_body) [34013 34043])
+                            ("self" variable nil (reparse-symbol indented_block_body) [34048 34086])
+                            ("self" variable nil (reparse-symbol indented_block_body) [34091 34121]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [33707 33711])
+                            ("remote_user" variable nil (reparse-symbol function_parameters) [33713 33724])
+                            ("remote_hostname" variable nil (reparse-symbol function_parameters) [33726 33741])
+                            ("ssh_options" variable nil (reparse-symbol function_parameters) [33743 33754]))                          
+                        :documentation "Create a Deployer for a specific remote user and host.
+
+    Args:
+      remote_user - the remote user to scp as.
+      remote_hostname - the hostname to copy to.
+      ssh_options - a string of optiosns to append to ssh/scp commands.
+    "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [33694 34122])
+                    ("Deploy" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [34136 34140])
+                            ("files" variable nil (reparse-symbol function_parameters) [34142 34147])
+                            ("remote_path" variable nil (reparse-symbol function_parameters) [34149 34160])
+                            ("file_root_dir" variable nil (reparse-symbol function_parameters) [34162 34175]))                          
+                        :documentation "Using scp, copy the files to the remote host.
+    Args:
+      files - a Bunch with two properties:
+        anchored_head - the beginning of the file path, which
+        will not be used in the tarball.
+        When untarred, files will be relative to this path.
+        files - the list of files to upload.
+      remote_path - The path on the remote machine to deploy to.
+      file_root_dir - The root path that the files are located in.
+    ")
+                        (reparse-symbol indented_block_body) [34125 35735])
+                    ("ExecuteRemotely" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [35758 35762])
+                            ("command" variable nil (reparse-symbol function_parameters) [35764 35771]))                          
+                        :documentation "Using ssh, execute command remotely.
+    Args:
+      command - the ssh command.
+    ")
+                        (reparse-symbol indented_block_body) [35738 36189]))                  
+                :type "class")
+                nil [33544 36189])
+            ("SetupPytestPath" function (:documentation "Adds pytest path and reloads tellapart so it gets recognized.
+
+  This is needed when wanting to access code in pytest, like smoke_test.
+
+  ") nil [36190 37790])
+            ("ImportStar" function
+               (:documentation "Loads all the modules from this package.
+
+  Args:
+    module - Python module to import * from.
+  "
+                :arguments 
+                  ( ("module" variable nil (reparse-symbol function_parameters) [37806 37812]))                  )
+                nil [37791 38312])
+            ("GetMergedSet" function
+               (:documentation "Get the union of 2 sets.
+
+  Args:
+    set1 - The first set.
+    set2 - The second set.
+
+  Returns:
+    The union of the two sets, or an empty set if both arguments are None.
+  "
+                :arguments 
+                  ( ("set1" variable nil (reparse-symbol function_parameters) [38330 38334])
+                    ("set2" variable nil (reparse-symbol function_parameters) [38336 38340]))                  )
+                nil [38313 38614])
+            ("Singleton" type
+               (:documentation "Eases the implementation of singletons.
+
+  Inherit from this class to create a singleton. To get the singleton instance,
+  use the `Instance` method.
+  "
+                :superclasses ("object")
+                :members 
+                  ( ("_singletons" variable nil (reparse-symbol indented_block_body) [38920 38936])
+                    ("__new__" function
+                       (:documentation "Controls the creation of singleton instances.
+    "
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [38952 38955])
+                            ("args" variable nil (reparse-symbol function_parameters) [38957 38962])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [38964 38972]))                          )
+                        (reparse-symbol indented_block_body) [38940 39265])
+                    ("Instance" function
+                       (:documentation "Returns the singleton instance.
+
+    Upon its first call, it creates a new instance on subsequent calls, the
+    already created instance is returned.
+    "
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [39296 39299]))                          
+                        :decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [39268 39549]))                  
+                :type "class")
+                nil [38615 39549])
+            ("MetaSingleton" type
+               (:documentation "Eases the implementation of singletons. Inherit from this class to create
+  a singleton.
+  "
+                :superclasses ("type")
+                :members 
+                  ( ("_INSTANCES" variable nil (reparse-symbol indented_block_body) [39679 39694])
+                    ("__call__" function (:arguments 
+                      ( ("cls" variable nil (reparse-symbol function_parameters) [39711 39714])
+                        ("args" variable nil (reparse-symbol function_parameters) [39716 39721])
+                        ("kwargs" variable nil (reparse-symbol function_parameters) [39723 39731]))                      ) (reparse-symbol indented_block_body) [39698 39890]))                  
+                :type "class")
+                nil [39550 39890])
+            ("_EARTH_RADIUS_MILES" variable nil nil [39891 39919])
+            ("GeoDistance" function
+               (:documentation "Gets the distance in miles between two points using the haversine formula
+  Args:
+    lat1 - latitude of first point in degrees
+    lon1 - longitude of first point in degrees
+    lat2 - latitude of second point in degrees
+    lon2 - longitude of second point in degrees
+  "
+                :arguments 
+                  ( ("lat1" variable nil (reparse-symbol function_parameters) [39936 39940])
+                    ("lon1" variable nil (reparse-symbol function_parameters) [39942 39946])
+                    ("lat2" variable nil (reparse-symbol function_parameters) [39948 39952])
+                    ("lon2" variable nil (reparse-symbol function_parameters) [39954 39958]))                  )
+                nil [39920 40645])
+            ("IgnoreExceptions" function
+               (:documentation "Context manager to ignore exceptions.
+
+  Usage:
+    with IgnoreExceptions(IOError, ValueError):
+      # Your dangerous code.
+
+  Args:
+    exceptions - Exceptions to ignore.
+  "
+                :arguments 
+                  ( ("exceptions" variable nil (reparse-symbol function_parameters) [40683 40694]))                  
+                :decorators 
+                  ( ("contextmanager" function (:type "decorator") nil nil))                  )
+                nil [40646 40928])
+            ("GetEffectiveProgramName" function
+               (:documentation "Determines the effective program name from the calculated program result
+  and the base program name
+  Args:
+    program_name - Name of the program
+    subprogram - result returned by the program's Operate()
+  Returns:
+    effective program name
+  "
+                :arguments 
+                  ( ("program_name" variable nil (reparse-symbol function_parameters) [40957 40969])
+                    ("subprogram" variable nil (reparse-symbol function_parameters) [40971 40981]))                  )
+                nil [40929 41434])
+            ("TransferAttributes" function
+               (:documentation "Set values of attributes of a object from a dictionary of
+  attributes, values.
+
+  Args:
+    source - A source object or a dictionary with attribute names and values to
+             transfer.
+    dest - Destination object to set values on.
+    attr_map - Dictionary mapping source attribute name to dest attribute
+               name. If attr_map is None, the method will assume the source and
+               the dest object have the same attribute name.
+    strip_val - Strip value if set to True and the value is a string.
+  "
+                :arguments 
+                  ( ("source" variable nil (reparse-symbol function_parameters) [41458 41464])
+                    ("dest" variable nil (reparse-symbol function_parameters) [41466 41470])
+                    ("attr_map" variable nil (reparse-symbol function_parameters) [41472 41480])
+                    ("strip_val" variable nil (reparse-symbol function_parameters) [41487 41496]))                  )
+                nil [41435 42802])
+            ("ConvertDimensionsTupleToString" function
+               (:documentation "Convert ad dimensions tuple of (width, height) to string of
+  [width]x[height] in the format of dimensions configured in thrift files.
+
+  Args:
+    dims - A tuple of (width, height)
+
+  Returns:
+    Joined string of dims in the format of dimensions configured
+    in thrift files. If dims is None or has length not equal to 2,
+    or does not contain two integers return an empty string.
+  "
+                :arguments 
+                  ( ("dims" variable nil (reparse-symbol function_parameters) [42838 42842]))                  )
+                nil [42803 43381])
+            ("ConvertDimensionsStringToTuple" function
+               (:documentation "Convert ad dimensions string in the format of dimensions
+  configured in thrift files ([width]x[height]) to a tuple of (width, height).
+
+  Args:
+    dims - ad dimensions string in the format of dimensions
+           configured in thrift files.
+    to_int - If True, convert width and height to int. Otherwise leave them as
+             str.
+
+  Returns:
+    A tuple of (width, height). Both width and height are integer. If dims is
+    None or an empty string or a malformed dimension string, return an empty
+    tuple.
+  "
+                :arguments 
+                  ( ("dims" variable nil (reparse-symbol function_parameters) [43417 43421])
+                    ("to_int" variable nil (reparse-symbol function_parameters) [43423 43429]))                  )
+                nil [43382 44230]))          
+    :file "misc_util.py"
+    :pointmax 44230
+    :fsize 44229
+    :lastmodtime '(21380 53352 0 0)
+    :unmatched-syntax '((NAME 42641 . 42644) (IF 42659 . 42661) (ELSE 42704 . 42708) (RETURN 32817 . 32823) (IF 32846 . 32848) (ELSE 32859 . 32863) (RETURN 26540 . 26546) (IF 26565 . 26567) (ELSE 26572 . 26576) (NAME 26189 . 26201) (IF 26213 . 26215) (ELSE 26225 . 26229) (NAME 23824 . 23833) (IF 23899 . 23901) (ELSE 23918 . 23922) (NAME 12971 . 12979) (IF 13012 . 13014) (ELSE 13050 . 13054))
+    )
+   )
+  :file "!Users!matt!dev!tellapart!py!tellapart!util!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

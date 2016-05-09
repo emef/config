@@ -1,0 +1,290 @@
+;; Object etcdcpp/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "etcdcpp/"
+  :tables (list 
+   (semanticdb-table "etcdcpp.cpp"
+    :major-mode 'c++-mode
+    :tags 
+        '( ("curl/curl.h" include (:system-flag t) nil [2 24])
+            ("iostream" include (:system-flag t) nil [25 44])
+            ("sstream" include (:system-flag t) nil [45 63])
+            ("vector" include (:system-flag t) nil [64 81])
+            ("string.h" include (:system-flag t) nil [82 101])
+            ("rapidjson/document.h" include nil nil [102 133])
+            ("rapidjson/writer.h" include nil nil [134 163])
+            ("rapidjson/stringbuffer.h" include nil nil [164 199])
+            ("memory" include (:system-flag t) nil [200 217])
+            ("etcdcpp.h" include nil nil [218 238])
+            ("std" using (:type ("std" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [240 260])
+            ("rapidjson" using (:type ("rapidjson" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [261 287])
+            ("etcdcpp" using (:type ("etcdcpp" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [288 312])
+            ("sappend" function
+               (:template 
+                  ( ("T" type (:type "class") nil nil))                  
+                :type ("string" type (:type "class") nil nil)
+                :arguments 
+                  ( ("s" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [350 359])
+                    ("t" variable (:type ("T" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [360 364]))                  )
+                nil [314 450])
+            ("writer" function
+               (:arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [557 568])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [569 581])
+                    ("nmemb" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [582 595])
+                    ("buffer" variable
+                       (:pointer 1
+                        :type ("string" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [596 611]))                  
+                :type "int")
+                nil [546 745])
+            ("with_curl" function
+               (:template 
+                  ( ("fun" type (:type "class") nil nil))                  
+                :type ("std::unique_ptr" type
+                     (:template-specifier 
+                        ( ("Document" type nil nil nil))                        
+                      :type "class")
+                      nil nil)
+                :arguments 
+                  ( ("server_list" variable (:type ("vector" type
+                         (:template-specifier 
+                            ( ("etcd_host" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [807 837])
+                    ("process" variable (:type ("fun" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [838 850]))                  )
+                nil [747 1503])
+            ("build_url" function
+               (:arguments 
+                  ( ("host" variable
+                       (:reference 1
+                        :type ("etcd_host" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1523 1539])
+                    ("key" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1540 1551]))                  
+                :type ("string" type (:type "class") nil nil))
+                nil [1506 1683])
+            ("etcd_session" function
+               (:constructor-flag t
+                :parent "etcd_session"
+                :arguments 
+                  ( ("server_list" variable (:type ("vector" type
+                         (:template-specifier 
+                            ( ("etcd_host" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [1712 1742]))                  
+                :type ("etcd_session" type (:type "class") nil nil))
+                nil [1685 1914])
+            ("etcd_session" function
+               (:constructor-flag t
+                :parent "etcd_session"
+                :arguments 
+                  ( ("host" variable (:type ("etcd_host" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1943 1958]))                  
+                :type ("etcd_session" type (:type "class") nil nil))
+                nil [1916 2080])
+            ("get" function
+               (:parent "etcd_session"
+                :arguments 
+                  ( ("key" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2126 2137]))                  
+                :type ("std::unique_ptr" type
+                     (:template-specifier 
+                        ( ("Document" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [2082 2342])
+            ("put" function
+               (:parent "etcd_session"
+                :arguments 
+                  ( ("key" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2389 2400])
+                    ("value" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2401 2414])
+                    ("ttl" variable (:type "int") (reparse-symbol arg-sub-list) [2415 2423]))                  
+                :type ("std::unique_ptr" type
+                     (:template-specifier 
+                        ( ("Document" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [2345 2509])
+            ("set" function
+               (:parent "etcd_session"
+                :arguments 
+                  ( ("key" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2555 2566])
+                    ("value" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2567 2580]))                  
+                :type ("std::unique_ptr" type
+                     (:template-specifier 
+                        ( ("Document" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [2511 2905])
+            ("del" function
+               (:parent "etcd_session"
+                :arguments 
+                  ( ("key" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2951 2962]))                  
+                :type ("std::unique_ptr" type
+                     (:template-specifier 
+                        ( ("Document" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [2907 3205]))          
+    :file "etcdcpp.cpp"
+    :pointmax 3194
+    :fsize 3194
+    :lastmodtime '(21826 46107 0 0)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "etcdcpp.h"
+    :major-mode 'c-mode
+    :tags 
+        '( ("LIBETCDCPP_cxx_" variable (:constant-flag t) nil [34 49])
+            ("vector" include (:system-flag t) nil [51 68])
+            ("string.h" include (:system-flag t) nil [69 88])
+            ("rapidjson/document.h" include nil nil [89 120])
+            ("memory" include (:system-flag t) nil [121 138])
+            ("std" using (:type ("std" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [140 160])
+            ("rapidjson" using (:type ("rapidjson" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [161 187])
+            ("etcdcpp" type
+               (:members 
+                  ( ("etcd_host" type
+                       (:members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [230 237])
+                            ("etcd_host" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("host" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [252 264])
+                                    ("port" variable (:type "short") (reparse-symbol arg-sub-list) [265 276]))                                  
+                                :type ("etcd_host" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [242 303])
+                            ("get_host" function (:type ("string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [310 344])
+                            ("get_port" function (:type "unsigned short") (reparse-symbol classsubparts) [350 392])
+                            ("private" label nil (reparse-symbol classsubparts) [396 404])
+                            ("host" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [409 421])
+                            ("port" variable (:type "unsigned short") (reparse-symbol classsubparts) [426 446]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [210 449])
+                    ("etcd_session" type
+                       (:members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [474 481])
+                            ("etcd_session" function
+                               (:prototype-flag t
+                                :constructor-flag t
+                                :arguments 
+                                  ( ("server_list" variable (:type ("vector" type
+                                         (:template-specifier 
+                                            ( ("etcd_host" type nil nil nil))                                            
+                                          :type "class")
+                                          nil nil)) (reparse-symbol arg-sub-list) [499 529]))                                  
+                                :type ("etcd_session" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [486 530])
+                            ("etcd_session" function
+                               (:prototype-flag t
+                                :constructor-flag t
+                                :arguments 
+                                  ( ("host" variable (:type ("etcd_host" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [549 564]))                                  
+                                :type ("etcd_session" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [536 565])
+                            ("get" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("key" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [657 668]))                                  
+                                :type ("std::unique_ptr" type
+                                     (:template-specifier 
+                                        ( ("Document" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol classsubparts) [627 669])
+                            ("post" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("key" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [762 773])
+                                    ("value" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [774 787])
+                                    ("ttl" variable (:type "int") (reparse-symbol arg-sub-list) [788 796]))                                  
+                                :type ("std::unique_ptr" type
+                                     (:template-specifier 
+                                        ( ("Document" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol classsubparts) [731 797])
+                            ("post" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("key" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [890 901])
+                                    ("value" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [902 915]))                                  
+                                :type ("std::unique_ptr" type
+                                     (:template-specifier 
+                                        ( ("Document" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol classsubparts) [859 916])
+                            ("put" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("key" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1008 1019])
+                                    ("value" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1020 1033])
+                                    ("ttl" variable (:type "int") (reparse-symbol arg-sub-list) [1034 1042]))                                  
+                                :type ("std::unique_ptr" type
+                                     (:template-specifier 
+                                        ( ("Document" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol classsubparts) [978 1043])
+                            ("put" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("key" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1135 1146])
+                                    ("value" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1147 1160]))                                  
+                                :type ("std::unique_ptr" type
+                                     (:template-specifier 
+                                        ( ("Document" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol classsubparts) [1105 1161])
+                            ("del" function
+                               (:prototype-flag t
+                                :arguments 
+                                  ( ("key" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1254 1265]))                                  
+                                :type ("std::unique_ptr" type
+                                     (:template-specifier 
+                                        ( ("Document" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol classsubparts) [1224 1266])
+                            ("private" label nil (reparse-symbol classsubparts) [1272 1280])
+                            ("server_list" variable (:type ("vector" type
+                                 (:template-specifier 
+                                    ( ("etcd_host" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [1287 1317]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [451 1320]))                  
+                :type "namespace")
+                nil [189 1323]))          
+    :file "etcdcpp.h"
+    :pointmax 1348
+    :fsize 1347
+    :lastmodtime '(21818 53297 0 0)
+    :unmatched-syntax '((punctuation 303 . 304))
+    :lexical-table 
+        '(("LIBETCDCPP_cxx_")
+          )
+
+    )
+   )
+  :file "!Users!matt!dev!etcdcpp!etcdcpp!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

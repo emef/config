@@ -1,0 +1,370 @@
+;; Object batch/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "batch/"
+  :tables (list 
+   (semanticdb-table "ExtractFeaturesAssembly.java"
+    :major-mode 'malabar-mode
+    :tags 
+        '( ("com.tellapart.runway.batch" package nil (reparse-symbol package_declaration) [1 36])
+            ("cascading.flow.FlowProcess" include nil (reparse-symbol import_declaration) [38 72])
+            ("cascading.operation.BaseOperation" include nil (reparse-symbol import_declaration) [73 114])
+            ("cascading.operation.Buffer" include nil (reparse-symbol import_declaration) [115 149])
+            ("cascading.operation.BufferCall" include nil (reparse-symbol import_declaration) [150 188])
+            ("cascading.operation.Function" include nil (reparse-symbol import_declaration) [189 225])
+            ("cascading.operation.FunctionCall" include nil (reparse-symbol import_declaration) [226 266])
+            ("cascading.operation.Insert" include nil (reparse-symbol import_declaration) [267 301])
+            ("cascading.pipe.Each" include nil (reparse-symbol import_declaration) [302 329])
+            ("cascading.pipe.Every" include nil (reparse-symbol import_declaration) [330 358])
+            ("cascading.pipe.GroupBy" include nil (reparse-symbol import_declaration) [359 389])
+            ("cascading.pipe.Pipe" include nil (reparse-symbol import_declaration) [390 417])
+            ("cascading.pipe.SubAssembly" include nil (reparse-symbol import_declaration) [418 452])
+            ("cascading.tuple.Fields" include nil (reparse-symbol import_declaration) [453 483])
+            ("cascading.tuple.Tuple" include nil (reparse-symbol import_declaration) [484 513])
+            ("cascading.tuple.TupleEntry" include nil (reparse-symbol import_declaration) [514 548])
+            ("com.tellapart.identity.IdentityUtils" include nil (reparse-symbol import_declaration) [549 593])
+            ("com.tellapart.identity.api.SID" include nil (reparse-symbol import_declaration) [594 632])
+            ("com.tellapart.runway.ContextExtractor" include nil (reparse-symbol import_declaration) [633 678])
+            ("com.tellapart.runway.api.EventContext" include nil (reparse-symbol import_declaration) [679 724])
+            ("com.tellapart.runway.features.ClassLabelExtractor" include nil (reparse-symbol import_declaration) [725 782])
+            ("com.tellapart.runway.features.FeatureRepresentation" include nil (reparse-symbol import_declaration) [783 842])
+            ("com.tellapart.rye.cascading.utils.PipeUtils" include nil (reparse-symbol import_declaration) [843 894])
+            ("com.tellapart.rye.common.Rye" include nil (reparse-symbol import_declaration) [895 931])
+            ("com.tellapart.serverlog.ServerLogEntry" include nil (reparse-symbol import_declaration) [932 978])
+            ("com.tellapart.summary.UserState" include nil (reparse-symbol import_declaration) [979 1018])
+            ("com.tellapart.summary.UserStateBuilder" include nil (reparse-symbol import_declaration) [1019 1065])
+            ("com.tellapart.summary.api.Summary" include nil (reparse-symbol import_declaration) [1066 1107])
+            ("com.tellapart.summary.api.SummaryIncrement" include nil (reparse-symbol import_declaration) [1108 1158])
+            ("com.tellapart.summary.api.SummaryType" include nil (reparse-symbol import_declaration) [1159 1204])
+            ("com.tellapart.summary.batch.SummaryBatchConstants" include nil (reparse-symbol import_declaration) [1205 1262])
+            ("com.tellapart.summary.batch.SummaryBatchUtil" include nil (reparse-symbol import_declaration) [1263 1315])
+            ("java.util.ArrayList" include nil (reparse-symbol import_declaration) [1317 1344])
+            ("java.util.Collection" include nil (reparse-symbol import_declaration) [1345 1373])
+            ("java.util.Iterator" include nil (reparse-symbol import_declaration) [1374 1400])
+            ("java.util.List" include nil (reparse-symbol import_declaration) [1401 1423])
+            ("java.util.Set" include nil (reparse-symbol import_declaration) [1424 1445])
+            ("ExtractFeaturesAssembly" type
+               (:typemodifiers ("public")
+                :superclasses "SubAssembly"
+                :members 
+                  ( ("summaryTypes" variable
+                       (:typemodifiers ("private" "final")
+                        :type "Set<SummaryType>")
+                        (reparse-symbol field_declaration) [1509 1553])
+                    ("explode" variable
+                       (:typemodifiers ("private" "final")
+                        :type "boolean")
+                        (reparse-symbol field_declaration) [1556 1586])
+                    ("getOutputFields" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("explode" variable (:type "boolean") (reparse-symbol formal_parameter) [1627 1642]))                          
+                        :type "Fields")
+                        (reparse-symbol method_declaration) [1590 1708])
+                    ("ExtractFeaturesAssembly" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("summaryPipe" variable (:type "Pipe") (reparse-symbol formal_parameter) [1743 1759])
+                            ("incrementPipe" variable (:type "Pipe") (reparse-symbol formal_parameter) [1761 1779])
+                            ("matchedAdsPipe" variable (:type "Pipe") (reparse-symbol formal_parameter) [1781 1800])
+                            ("summaryTypes" variable (:type "Set<SummaryType>") (reparse-symbol formal_parameter) [1808 1837])
+                            ("representation" variable (:type "FeatureRepresentation") (reparse-symbol formal_parameter) [1839 1875])
+                            ("classLabelExtractor" variable (:type "ClassLabelExtractor") (reparse-symbol formal_parameter) [1883 1922])
+                            ("explode" variable (:type "boolean") (reparse-symbol formal_parameter) [1924 1939]))                          )
+                        (reparse-symbol constructor_declaration) [1712 4031])
+                    ("ExtractSIDAndTime" type
+                       (:typemodifiers ("public")
+                        :interfaces ("Function<TupleEntry>")
+                        :superclasses "BaseOperation<TupleEntry>"
+                        :members 
+                          ( ("ExtractSIDAndTime" function
+                               (:constructor-flag t
+                                :typemodifiers ("public"))
+                                (reparse-symbol constructor_declaration) [4291 4388])
+                            ("operate" function
+                               (:arguments 
+                                  ( ("flowProcess" variable (:type "FlowProcess") (reparse-symbol formal_parameter) [4428 4451])
+                                    ("functionCall" variable (:type "FunctionCall<TupleEntry>") (reparse-symbol formal_parameter) [4453 4490]))                                  
+                                :type "void")
+                                (reparse-symbol method_declaration) [4415 5824]))                          
+                        :type "class")
+                        (reparse-symbol class_declaration) [4181 5828])
+                    ("ExtractFeaturesBuffer" type
+                       (:typemodifiers ("public" "static")
+                        :interfaces ("Buffer<TupleEntry>")
+                        :superclasses "BaseOperation<TupleEntry>"
+                        :members 
+                          ( ("summaryTypes" variable
+                               (:typemodifiers ("private" "final")
+                                :type "Collection<SummaryType>")
+                                (reparse-symbol field_declaration) [5996 6047])
+                            ("representation" variable
+                               (:typemodifiers ("private" "final")
+                                :type "FeatureRepresentation")
+                                (reparse-symbol field_declaration) [6052 6103])
+                            ("classLabelExtractor" variable
+                               (:typemodifiers ("private" "final")
+                                :type "ClassLabelExtractor")
+                                (reparse-symbol field_declaration) [6108 6162])
+                            ("explode" variable
+                               (:typemodifiers ("private" "final")
+                                :type "boolean")
+                                (reparse-symbol field_declaration) [6167 6197])
+                            ("ExtractFeaturesBuffer" function
+                               (:constructor-flag t
+                                :typemodifiers ("public")
+                                :arguments 
+                                  ( ("summaryTypes" variable (:type "Collection<SummaryType>") (reparse-symbol formal_parameter) [6690 6726])
+                                    ("representation" variable (:type "FeatureRepresentation") (reparse-symbol formal_parameter) [6736 6772])
+                                    ("classLabelExtractor" variable (:type "ClassLabelExtractor") (reparse-symbol formal_parameter) [6774 6813])
+                                    ("explode" variable (:type "boolean") (reparse-symbol formal_parameter) [6823 6838]))                                  )
+                                (reparse-symbol constructor_declaration) [6661 7054])
+                            ("getOutputFields" function
+                               (:typemodifiers ("public" "static")
+                                :arguments 
+                                  ( ("explode" variable (:type "boolean") (reparse-symbol formal_parameter) [7237 7252]))                                  
+                                :type "Fields")
+                                (reparse-symbol method_declaration) [7200 7600])
+                            ("operate" function
+                               (:arguments 
+                                  ( ("flowProcess" variable (:type "FlowProcess") (reparse-symbol formal_parameter) [7640 7663])
+                                    ("bufferCall" variable (:type "BufferCall<TupleEntry>") (reparse-symbol formal_parameter) [7665 7698]))                                  
+                                :type "void")
+                                (reparse-symbol method_declaration) [7627 9941]))                          
+                        :type "class")
+                        (reparse-symbol class_declaration) [5877 9945]))                  
+                :type "class")
+                (reparse-symbol class_declaration) [1447 9947]))          
+    :file "ExtractFeaturesAssembly.java"
+    :pointmax 9949
+    :fsize 9948
+    :lastmodtime '(21390 17126 0 0)
+    :unmatched-syntax '((SEMICOLON 9303 . 9304) (GT 9287 . 9288) (RPAREN 7940 . 7941) (GT 7938 . 7939) (RPAREN 7821 . 7822) (GT 7819 . 7820) (PUBLIC 7620 . 7626) (PUBLIC 4408 . 4414))
+    )
+   (semanticdb-table "MultinomialNaiveBayesTrainingAssembly.java"
+    :major-mode 'malabar-mode
+    :tags 
+        '( ("com.tellapart.runway.batch" package nil (reparse-symbol package_declaration) [1 36])
+            ("cascading.flow.FlowProcess" include nil (reparse-symbol import_declaration) [38 72])
+            ("cascading.operation.Aggregator" include nil (reparse-symbol import_declaration) [73 111])
+            ("cascading.operation.AggregatorCall" include nil (reparse-symbol import_declaration) [112 154])
+            ("cascading.operation.BaseOperation" include nil (reparse-symbol import_declaration) [155 196])
+            ("cascading.operation.Function" include nil (reparse-symbol import_declaration) [197 233])
+            ("cascading.operation.FunctionCall" include nil (reparse-symbol import_declaration) [234 274])
+            ("cascading.pipe.Each" include nil (reparse-symbol import_declaration) [275 302])
+            ("cascading.pipe.Pipe" include nil (reparse-symbol import_declaration) [303 330])
+            ("cascading.pipe.SubAssembly" include nil (reparse-symbol import_declaration) [331 365])
+            ("cascading.pipe.assembly.AggregateBy" include nil (reparse-symbol import_declaration) [366 409])
+            ("cascading.tuple.Fields" include nil (reparse-symbol import_declaration) [410 440])
+            ("cascading.tuple.Tuple" include nil (reparse-symbol import_declaration) [441 470])
+            ("cascading.tuple.TupleEntry" include nil (reparse-symbol import_declaration) [471 505])
+            ("com.google.common.collect.Sets" include nil (reparse-symbol import_declaration) [506 544])
+            ("java.io.Serializable" include nil (reparse-symbol import_declaration) [546 574])
+            ("java.security.SecureRandom" include nil (reparse-symbol import_declaration) [575 609])
+            ("java.util.HashMap" include nil (reparse-symbol import_declaration) [610 635])
+            ("java.util.Map" include nil (reparse-symbol import_declaration) [636 657])
+            ("java.util.Set" include nil (reparse-symbol import_declaration) [658 679])
+            ("MultinomialNaiveBayesTrainingAssembly" type
+               (:typemodifiers ("public")
+                :superclasses "SubAssembly"
+                :members 
+                  ( ("getOutputFields" function
+                       (:typemodifiers ("public" "static")
+                        :type "Fields")
+                        (reparse-symbol method_declaration) [757 911])
+                    ("MultinomialNaiveBayesTrainingAssembly" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("featurePipe" variable (:type "Pipe") (reparse-symbol formal_parameter) [967 983])
+                            ("skewSplits" variable (:type "Integer") (reparse-symbol formal_parameter) [991 1009])
+                            ("seed" variable
+                               (:dereference 1
+                                :type "byte")
+                                (reparse-symbol formal_parameter) [1017 1028]))                          )
+                        (reparse-symbol constructor_declaration) [915 1904])
+                    ("AddSkew" type
+                       (:typemodifiers ("public")
+                        :interfaces ("Function<TupleEntry>")
+                        :superclasses "BaseOperation<TupleEntry>"
+                        :members 
+                          ( ("numSplits" variable
+                               (:typemodifiers ("private" "final")
+                                :type "int")
+                                (reparse-symbol field_declaration) [2008 2036])
+                            ("rng" variable
+                               (:typemodifiers ("private" "final")
+                                :type "SecureRandom")
+                                (reparse-symbol field_declaration) [2041 2072])
+                            ("AddSkew" function
+                               (:constructor-flag t
+                                :typemodifiers ("public")
+                                :arguments 
+                                  ( ("numSplits" variable (:type "int") (reparse-symbol formal_parameter) [2093 2106])
+                                    ("seed" variable
+                                       (:dereference 1
+                                        :type "byte")
+                                        (reparse-symbol formal_parameter) [2108 2119]))                                  )
+                                (reparse-symbol constructor_declaration) [2078 2354])
+                            ("operate" function
+                               (:arguments 
+                                  ( ("flowProcess" variable (:type "FlowProcess") (reparse-symbol formal_parameter) [2394 2417])
+                                    ("functionCall" variable (:type "FunctionCall<TupleEntry>") (reparse-symbol formal_parameter) [2419 2456]))                                  
+                                :type "void")
+                                (reparse-symbol method_declaration) [2381 2545]))                          
+                        :type "class")
+                        (reparse-symbol class_declaration) [1908 2549])
+                    ("MNBFeatureCounter" type
+                       (:typemodifiers ("public" "static")
+                        :superclasses "AggregateBy"
+                        :members 
+                          ( ("COUNTER_FIELD" variable
+                               (:typemodifiers ("private" "static" "final")
+                                :type "Fields")
+                                (reparse-symbol field_declaration) [2618 2682])
+                            ("MNBFeatureCounter" function
+                               (:constructor-flag t
+                                :typemodifiers ("public")
+                                :arguments 
+                                  ( ("valueFields" variable (:type "Fields") (reparse-symbol formal_parameter) [2713 2731])
+                                    ("preAggregated" variable (:type "boolean") (reparse-symbol formal_parameter) [2733 2754]))                                  )
+                                (reparse-symbol constructor_declaration) [2688 2898])
+                            ("GenericPartials" type
+                               (:typemodifiers ("private" "static")
+                                :interfaces ("Functor")
+                                :members 
+                                  ( ("preAggregated" variable
+                                       (:typemodifiers ("private" "final")
+                                        :type "boolean")
+                                        (reparse-symbol field_declaration) [3059 3095])
+                                    ("declaredFields" variable
+                                       (:typemodifiers ("private")
+                                        :type "Fields")
+                                        (reparse-symbol field_declaration) [3102 3132])
+                                    ("GenericPartials" function
+                                       (:constructor-flag t
+                                        :typemodifiers ("public")
+                                        :arguments 
+                                          ( ("declaredFields" variable (:type "Fields") (reparse-symbol formal_parameter) [3163 3184])
+                                            ("preAggregated" variable (:type "boolean") (reparse-symbol formal_parameter) [3186 3207]))                                          )
+                                        (reparse-symbol constructor_declaration) [3140 3308])
+                                    ("aggregate" function
+                                       (:arguments 
+                                          ( ("flowProcess" variable (:type "FlowProcess") (reparse-symbol formal_parameter) [3355 3378])
+                                            ("args" variable (:type "TupleEntry") (reparse-symbol formal_parameter) [3380 3395])
+                                            ("context" variable (:type "Tuple") (reparse-symbol formal_parameter) [3397 3410]))                                          
+                                        :type "Tuple")
+                                        (reparse-symbol method_declaration) [3339 4144])
+                                    ("complete" function
+                                       (:arguments 
+                                          ( ("flowProcess" variable (:type "FlowProcess") (reparse-symbol formal_parameter) [4190 4213])
+                                            ("context" variable (:type "Tuple") (reparse-symbol formal_parameter) [4215 4228]))                                          
+                                        :type "Tuple")
+                                        (reparse-symbol method_declaration) [4175 4263])
+                                    ("getDeclaredFields" function (:type "Fields") (reparse-symbol method_declaration) [4294 4361]))                                  
+                                :type "class")
+                                (reparse-symbol class_declaration) [2995 4367])
+                            ("GenericAggregator" type
+                               (:typemodifiers ("private" "static")
+                                :interfaces ("Aggregator<Tuple>")
+                                :superclasses "BaseOperation<Tuple>"
+                                :members 
+                                  ( ("serialVersionUID" variable
+                                       (:typemodifiers ("private" "static" "final")
+                                        :type "long")
+                                        (reparse-symbol field_declaration) [4548 4596])
+                                    ("GenericAggregator" function
+                                       (:constructor-flag t
+                                        :typemodifiers ("public")
+                                        :arguments 
+                                          ( ("declaredFields" variable (:type "Fields") (reparse-symbol formal_parameter) [4629 4650]))                                          )
+                                        (reparse-symbol constructor_declaration) [4604 4692])
+                                    ("start" function
+                                       (:arguments 
+                                          ( ("flow" variable (:type "FlowProcess") (reparse-symbol formal_parameter) [4734 4750])
+                                            ("call" variable (:type "AggregatorCall<Tuple>") (reparse-symbol formal_parameter) [4752 4778]))                                          
+                                        :type "void")
+                                        (reparse-symbol method_declaration) [4723 4820])
+                                    ("aggregate" function
+                                       (:arguments 
+                                          ( ("flow" variable (:type "FlowProcess") (reparse-symbol formal_parameter) [4866 4882])
+                                            ("call" variable (:type "AggregatorCall<Tuple>") (reparse-symbol formal_parameter) [4884 4910]))                                          
+                                        :type "void")
+                                        (reparse-symbol method_declaration) [4851 5759])
+                                    ("complete" function
+                                       (:arguments 
+                                          ( ("flow" variable (:type "FlowProcess") (reparse-symbol formal_parameter) [5804 5820])
+                                            ("call" variable (:type "AggregatorCall<Tuple>") (reparse-symbol formal_parameter) [5822 5848]))                                          
+                                        :type "void")
+                                        (reparse-symbol method_declaration) [5790 5994]))                                  
+                                :type "class")
+                                (reparse-symbol class_declaration) [4435 6000])
+                            ("FeatureCounter" type
+                               (:typemodifiers ("private" "static")
+                                :interfaces ("Serializable")
+                                :members 
+                                  ( ("featureIndex" variable
+                                       (:typemodifiers ("private")
+                                        :type "Integer")
+                                        (reparse-symbol field_declaration) [6345 6374])
+                                    ("priorCounts" variable
+                                       (:typemodifiers ("private")
+                                        :type "Map<Integer,Long>")
+                                        (reparse-symbol field_declaration) [6432 6471])
+                                    ("conditionalCounts" variable
+                                       (:typemodifiers ("private")
+                                        :type "Map<Integer,Map<Integer,Long>>")
+                                        (reparse-symbol field_declaration) [6554 6613])
+                                    ("FeatureCounter" function
+                                       (:constructor-flag t
+                                        :typemodifiers ("public"))
+                                        (reparse-symbol constructor_declaration) [6621 6767])
+                                    ("FeatureCounter" function
+                                       (:constructor-flag t
+                                        :typemodifiers ("public")
+                                        :arguments 
+                                          ( ("featureIndex" variable (:type "Integer") (reparse-symbol formal_parameter) [6808 6828])
+                                            ("counts" variable (:type "Map<Integer,Map<Integer,Long>>") (reparse-symbol formal_parameter) [6840 6879])
+                                            ("classLabelCounts" variable (:type "Map<Integer,Long>") (reparse-symbol formal_parameter) [6891 6926]))                                          )
+                                        (reparse-symbol constructor_declaration) [6775 7065])
+                                    ("setFeatureIndex" function
+                                       (:typemodifiers ("public")
+                                        :arguments 
+                                          ( ("featureIndex" variable (:type "int") (reparse-symbol formal_parameter) [7101 7117]))                                          
+                                        :type "void")
+                                        (reparse-symbol method_declaration) [7073 7170])
+                                    ("countFeature" function
+                                       (:typemodifiers ("public")
+                                        :arguments 
+                                          ( ("classLabel" variable (:type "int") (reparse-symbol formal_parameter) [7409 7423])
+                                            ("featureValue" variable (:type "int") (reparse-symbol formal_parameter) [7425 7441]))                                          
+                                        :type "void")
+                                        (reparse-symbol method_declaration) [7384 8315])
+                                    ("combine" function
+                                       (:typemodifiers ("public" "static")
+                                        :arguments 
+                                          ( ("counter1" variable (:type "FeatureCounter") (reparse-symbol formal_parameter) [8478 8501])
+                                            ("counter2" variable (:type "FeatureCounter") (reparse-symbol formal_parameter) [8503 8526]))                                          
+                                        :type "FeatureCounter")
+                                        (reparse-symbol method_declaration) [8441 11075])
+                                    ("toString" function
+                                       (:typemodifiers ("public")
+                                        :type "String")
+                                        (reparse-symbol method_declaration) [11083 11854]))                                  
+                                :type "class")
+                                (reparse-symbol class_declaration) [6208 11860]))                          
+                        :type "class")
+                        (reparse-symbol class_declaration) [2553 11864]))                  
+                :type "class")
+                (reparse-symbol class_declaration) [681 11866]))          
+    :file "MultinomialNaiveBayesTrainingAssembly.java"
+    :pointmax 11867
+    :fsize 11866
+    :lastmodtime '(21390 17126 0 0)
+    :unmatched-syntax '((RBRACE 10980 . 10981) (SEMICOLON 10968 . 10969) (RPAREN 10967 . 10968) (IDENTIFIER 10962 . 10967) (COMMA 10960 . 10961) (IDENTIFIER 10948 . 10960) (LPAREN 10947 . 10948) (IDENTIFIER 10944 . 10947) (DOT 10943 . 10944) (IDENTIFIER 10923 . 10943) (RBRACE 10909 . 10910) (SEMICOLON 10895 . 10896) (IDENTIFIER 10885 . 10895) (PLUSEQ 10882 . 10884) (IDENTIFIER 10876 . 10881) (LBRACE 10860 . 10861) (RPAREN 10858 . 10859) (NULL_LITERAL 10854 . 10858) (NOTEQ 10851 . 10853) (IDENTIFIER 10840 . 10850) (LPAREN 10839 . 10840) (IF 10836 . 10838) (RBRACE 10822 . 10823) (SEMICOLON 10808 . 10809) (IDENTIFIER 10798 . 10808) (PLUSEQ 10795 . 10797) (IDENTIFIER 10789 . 10794) (LBRACE 10773 . 10774) (RPAREN 10771 . 10772) (NULL_LITERAL 10767 . 10771) (NOTEQ 10764 . 10766) (IDENTIFIER 10753 . 10763) (LPAREN 10752 . 10753) (IF 10749 . 10751) (SEMICOLON 10735 . 10736) (NUMBER_LITERAL 10733 . 10735) (EQ 10731 . 10732) (IDENTIFIER 10725 . 10730) (IDENTIFIER 10720 . 10724) (SEMICOLON 10706 . 10707) (RPAREN 10705 . 10706) (IDENTIFIER 10693 . 10705) (LPAREN 10692 . 10693) (IDENTIFIER 10689 . 10692) (DOT 10688 . 10689) (IDENTIFIER 10670 . 10688) (EQ 10668 . 10669) (IDENTIFIER 10657 . 10667) (IDENTIFIER 10652 . 10656) (SEMICOLON 10638 . 10639) (RPAREN 10637 . 10638) (IDENTIFIER 10625 . 10637) (LPAREN 10624 . 10625) (IDENTIFIER 10621 . 10624) (DOT 10620 . 10621) (IDENTIFIER 10602 . 10620) (EQ 10600 . 10601) (IDENTIFIER 10589 . 10599) (IDENTIFIER 10584 . 10588) (LBRACE 10570 . 10571) (RPAREN 10568 . 10569) (IDENTIFIER 10555 . 10568) (COLON 10553 . 10554) (IDENTIFIER 10540 . 10552) (IDENTIFIER 10532 . 10539) (LPAREN 10531 . 10532) (FOR 10527 . 10530) (SEMICOLON 10515 . 10516) (RPAREN 10514 . 10515) (RPAREN 10513 . 10514) (LPAREN 10512 . 10513) (IDENTIFIER 10506 . 10512) (DOT 10505 . 10506) (IDENTIFIER 10487 . 10505) (COMMA 10471 . 10472) (RPAREN 10470 . 10471) (LPAREN 10469 . 10470) (IDENTIFIER 10463 . 10469) (DOT 10462 . 10463) (IDENTIFIER 10444 . 10462) (LPAREN 10443 . 10444) (IDENTIFIER 10438 . 10443) (DOT 10437 . 10438) (IDENTIFIER 10433 . 10437) (EQ 10431 . 10432) (IDENTIFIER 10417 . 10430) (GT 10415 . 10416) (IDENTIFIER 10408 . 10415) (LT 10407 . 10408) (IDENTIFIER 10400 . 10407) (DOT 10399 . 10400) (IDENTIFIER 10395 . 10399) (RBRACE 10382 . 10383) (SEMICOLON 10370 . 10371) (RPAREN 10369 . 10370) (LPAREN 10368 . 10369) (GT 10367 . 10368) (LT 10366 . 10367) (IDENTIFIER 10359 . 10366) (NEW 10355 . 10358) (EQ 10353 . 10354) (IDENTIFIER 10334 . 10352) (LBRACE 10320 . 10321) (RPAREN 10318 . 10319) (NULL_LITERAL 10314 . 10318) (EQEQ 10311 . 10313) (IDENTIFIER 10292 . 10310) (LPAREN 10291 . 10292) (IF 10288 . 10290) (RBRACE 10276 . 10277) (SEMICOLON 10264 . 10265) (RPAREN 10263 . 10264) (LPAREN 10262 . 10263) (GT 10261 . 10262) (LT 10260 . 10261) (IDENTIFIER 10253 . 10260) (NEW 10249 . 10252) (EQ 10247 . 10248) (IDENTIFIER 10228 . 10246) (LBRACE 10214 . 10215) (RPAREN 10212 . 10213) (NULL_LITERAL 10208 . 10212) (EQEQ 10205 . 10207) (IDENTIFIER 10186 . 10204) (LPAREN 10185 . 10186) (IF 10182 . 10184) (SEMICOLON 10169 . 10170) (RPAREN 10168 . 10169) (IDENTIFIER 10158 . 10168) (LPAREN 10157 . 10158) (IDENTIFIER 10154 . 10157) (DOT 10153 . 10154) (IDENTIFIER 10136 . 10153) (DOT 10135 . 10136) (IDENTIFIER 10127 . 10135) (EQ 10125 . 10126) (IDENTIFIER 10106 . 10124) (GT 10104 . 10105) (IDENTIFIER 10100 . 10104) (COMMA 10098 . 10099) (IDENTIFIER 10091 . 10098) (LT 10090 . 10091) (IDENTIFIER 10087 . 10090) (SEMICOLON 10075 . 10076) (RPAREN 10074 . 10075) (IDENTIFIER 10064 . 10074) (LPAREN 10063 . 10064) (IDENTIFIER 10060 . 10063) (DOT 10059 . 10060) (IDENTIFIER 10042 . 10059) (DOT 10041 . 10042) (IDENTIFIER 10033 . 10041) (EQ 10031 . 10032) (IDENTIFIER 10012 . 10030) (GT 10010 . 10011) (IDENTIFIER 10006 . 10010) (COMMA 10004 . 10005) (IDENTIFIER 9997 . 10004) (LT 9996 . 9997) (IDENTIFIER 9993 . 9996) (SEMICOLON 9980 . 9981) (RPAREN 9979 . 9980) (IDENTIFIER 9967 . 9979) (PLUS 9965 . 9966) (IDENTIFIER 9952 . 9964) (COMMA 9950 . 9951) (IDENTIFIER 9940 . 9950) (LPAREN 9939 . 9940) (IDENTIFIER 9936 . 9939) (DOT 9935 . 9936) (IDENTIFIER 9921 . 9935) (RBRACE 9909 . 9910) (SEMICOLON 9897 . 9898) (NUMBER_LITERAL 9895 . 9897) (EQ 9893 . 9894) (IDENTIFIER 9880 . 9892) (LBRACE 9866 . 9867) (RPAREN 9864 . 9865) (NULL_LITERAL 9860 . 9864) (EQEQ 9857 . 9859) (IDENTIFIER 9844 . 9856) (LPAREN 9843 . 9844) (IF 9840 . 9842) (RBRACE 9828 . 9829) (SEMICOLON 9816 . 9817) (NUMBER_LITERAL 9814 . 9816) (EQ 9812 . 9813) (IDENTIFIER 9799 . 9811) (LBRACE 9785 . 9786) (RPAREN 9783 . 9784) (NULL_LITERAL 9779 . 9783) (EQEQ 9776 . 9778) (IDENTIFIER 9763 . 9775) (LPAREN 9762 . 9763) (IF 9759 . 9761) (SEMICOLON 9746 . 9747) (RPAREN 9745 . 9746) (IDENTIFIER 9735 . 9745) (LPAREN 9734 . 9735) (IDENTIFIER 9731 . 9734) (DOT 9730 . 9731) (IDENTIFIER 9719 . 9730) (DOT 9718 . 9719) (IDENTIFIER 9710 . 9718) (EQ 9708 . 9709) (IDENTIFIER 9695 . 9707) (IDENTIFIER 9690 . 9694) (SEMICOLON 9678 . 9679) (RPAREN 9677 . 9678) (IDENTIFIER 9667 . 9677) (LPAREN 9666 . 9667) (IDENTIFIER 9663 . 9666) (DOT 9662 . 9663) (IDENTIFIER 9651 . 9662) (DOT 9650 . 9651) (IDENTIFIER 9642 . 9650) (EQ 9640 . 9641) (IDENTIFIER 9627 . 9639) (IDENTIFIER 9622 . 9626) (SEMICOLON 9609 . 9610) (RPAREN 9608 . 9609) (IDENTIFIER 9588 . 9608) (COMMA 9586 . 9587) (IDENTIFIER 9576 . 9586) (LPAREN 9575 . 9576) (IDENTIFIER 9572 . 9575) (DOT 9571 . 9572) (IDENTIFIER 9562 . 9571) (SEMICOLON 9550 . 9551) (RPAREN 9549 . 9550) (LPAREN 9548 . 9549) (GT 9547 . 9548) (RPAREN 9297 . 9298) (GT 9295 . 9296) (RPAREN 9236 . 9237) (GT 9234 . 9235) (SEMICOLON 7951 . 7952) (RPAREN 7950 . 7951) (LPAREN 7949 . 7950) (GT 7948 . 7949) (RPAREN 6757 . 6758) (GT 6755 . 6756) (RPAREN 6718 . 6719) (GT 6716 . 6717) (PUBLIC 5783 . 5789) (PUBLIC 4844 . 4850) (PUBLIC 4716 . 4722) (PUBLIC 4287 . 4293) (PUBLIC 4168 . 4174) (PUBLIC 3332 . 3338) (PUBLIC 2374 . 2380))
+    )
+   )
+  :file "!Users!matt!dev!tellapart!runway!runway-batch!src!main!java!com!tellapart!runway!batch!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

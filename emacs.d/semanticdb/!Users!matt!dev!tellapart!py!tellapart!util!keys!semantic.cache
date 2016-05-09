@@ -1,0 +1,808 @@
+;; Object keys/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "keys/"
+  :tables (list 
+   (semanticdb-table "key_util.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("\"\"\"Utility functions and objects for dealing with accessing credentials.
+\"\"\"" code nil nil [1 77])
+            ("__copyright__" variable nil nil [79 152])
+            ("os" include nil nil [154 163])
+            ("tellapart.settings" include nil nil [165 212])
+            ("tellapart.settings" include nil nil [213 259])
+            ("tellapart.settings.account_settings" include nil nil [260 321])
+            ("tellapart.settings.account_settings" include nil nil [322 383])
+            ("tellapart.settings.account_settings" include nil nil [384 444])
+            ("tellapart.settings.account_settings" include nil nil [445 503])
+            ("tellapart.settings.account_settings" include nil nil [504 560])
+            ("tellapart.util" include nil nil [561 596])
+            ("tellapart.util" include nil nil [597 633])
+            ("tellapart.util" include nil nil [634 669])
+            ("tellapart.util.keys.key_manager" include nil nil [670 729])
+            ("tellapart.util.keys.key_manager" include nil nil [730 789])
+            ("tellapart.util.keys.key_manager" include nil nil [790 848])
+            ("tellapart.util.keys.key_manager" include nil nil [849 905])
+            ("LOG" variable nil nil [907 949])
+            ("AWS_ACCESS_KEY" variable nil nil [1093 1126])
+            ("AWS_SECRET_KEY" variable nil nil [1127 1160])
+            ("CLOUDFRONT_ACCESS_KEY" variable nil nil [1162 1213])
+            ("CLOUDFRONT_SECRET_KEY" variable nil nil [1214 1265])
+            ("FB_ADS_API_APP_ID" variable nil nil [1267 1306])
+            ("FB_ADS_API_APP_SECRET" variable nil nil [1307 1354])
+            ("FB_ADS_API_ACCESS_TOKEN" variable nil nil [1355 1406])
+            ("FB_ADS_ACCOUNT_API_ACCESS_TOKEN" variable nil nil [1407 1474])
+            ("MYSQL_USER" variable nil nil [1476 1501])
+            ("MYSQL_PASS" variable nil nil [1502 1529])
+            ("NAGIOS_USER" variable nil nil [1531 1558])
+            ("NAGIOS_PASS" variable nil nil [1559 1588])
+            ("FEED_FTP_USER" variable nil nil [1590 1621])
+            ("FEED_FTP_PASS" variable nil nil [1622 1655])
+            ("EMAIL_SENDER" variable nil nil [1657 1686])
+            ("EMAIL_PASSWD" variable nil nil [1687 1716])
+            ("GOMEZ_ACCT" variable nil nil [1718 1746])
+            ("GOMEZ_PASS" variable nil nil [1747 1774])
+            ("ADWORDS_API_ACCOUNT" variable nil nil [1776 1819])
+            ("ADWORDS_API_PASSWORD" variable nil nil [1820 1863])
+            ("ADWORDS_DEVELOPER_TOKEN" variable nil nil [1864 1919])
+            ("PINGDOM_USER" variable nil nil [1921 1950])
+            ("PINGDOM_API_KEY" variable nil nil [1951 1986])
+            ("PINGDOM_PASSWORD" variable nil nil [1987 2022])
+            ("UDL_ACCESS_TOKEN_SECRET" variable nil nil [2024 2075])
+            ("_ACCOUNT_MANAGER_CLASS_MAP" variable nil nil [2238 2406])
+            ("_RESOLVED_ACCOUNT" variable nil nil [2408 2432])
+            ("_KEY_MANAGER" variable nil nil [2433 2452])
+            ("Initialize" function
+               (:documentation "Initialize the global KeyManager object.
+  "
+                :arguments 
+                  ( ("account" variable nil (reparse-symbol function_parameters) [2469 2476]))                  )
+                nil [2454 2908])
+            ("ResolveAccount" function
+               (:documentation "Determine the actual account to use for initializing the Key Manager based
+  on the account value given. If the given account is None,
+  we perform heuristic checks to try to determine the execution environment.
+
+  Args:
+    account - Guess at the current account name. Can be None.
+
+  Returns:
+    Name of the resolved account. If resolution fails, an exception is thrown.
+  "
+                :arguments 
+                  ( ("account" variable nil (reparse-symbol function_parameters) [2928 2935]))                  )
+                nil [2909 4051])
+            ("InitializeForProduction" function (:documentation "Initialize the global KeyManager object based on the current account,
+  and begin watching the backing store for changes, if applicable.
+  ") nil [4052 4320])
+            ("GetKey" function
+               (:documentation "Retrieve the value of a key for the given account.
+
+  Args:
+    account - Account name to retrieve the key from (e.g. 'prod').
+    key_name - Name of the key to retrieve.
+
+  Returns:
+    The String value of the key.
+  "
+                :arguments 
+                  ( ("account" variable nil (reparse-symbol function_parameters) [4481 4488])
+                    ("key_name" variable nil (reparse-symbol function_parameters) [4490 4498]))                  )
+                nil [4470 4821])
+            ("WatchKeys" function
+               (:documentation "Register a callback for changes to the values of a set of keys in an
+  account.
+
+  Args:
+    account - Name of the account in which to watch keys.
+    key_names - List of key names to watch for changes.
+    callback - Callable to execute when a key value changes.
+  "
+                :arguments 
+                  ( ("account" variable nil (reparse-symbol function_parameters) [4836 4843])
+                    ("key_names" variable nil (reparse-symbol function_parameters) [4845 4854])
+                    ("callback" variable nil (reparse-symbol function_parameters) [4856 4864]))                  )
+                nil [4822 5256])
+            ("GetKeyFilePath" function
+               (:documentation "Get the absolute local file path for a key name.
+
+  TODO(kevin): This is a hack to maintain backwards compatibility. Remove this
+  whenever possible.
+
+  Args:
+    account - Name of the account for the key.
+    key_name - Name of the key.
+
+  Returns:
+    Local absolute file path for the key. If the key does not exist or is
+    inaccessible, None is returned.
+  "
+                :arguments 
+                  ( ("account" variable nil (reparse-symbol function_parameters) [5276 5283])
+                    ("key_name" variable nil (reparse-symbol function_parameters) [5285 5293]))                  )
+                nil [5257 5768])
+            ("GetKeyPairFilePath" function
+               (:documentation "Retrieves the local path to the SSH key-pair for the account and region.
+
+  TODO(kevin): This is a hack to maintain backwards compatibility. Remove this
+  whenever possible.
+
+  Args:
+    account - Account name for the key-pair to retrieve (e.g. 'prod').
+    region - Region name for the key-pair to retrieve (e.g. 'us-east-1').
+
+  Returns:
+    The absolute local path to the file, if it is available locally. Returns
+    None if the file is not available on this instance.
+  "
+                :arguments 
+                  ( ("account" variable nil (reparse-symbol function_parameters) [5792 5799])
+                    ("region" variable nil (reparse-symbol function_parameters) [5801 5807]))                  )
+                nil [5769 6373])
+            ("LoadAwsCredentials" function
+               (:documentation "Load the AWS credentials for the given account.
+
+  Args:
+    account - Account name to retrieve the credentials for (e.g. 'prod').
+
+  Returns:
+    An (access_key_id, secret_key) tuple.
+  "
+                :arguments 
+                  ( ("account" variable nil (reparse-symbol function_parameters) [6548 6555]))                  )
+                nil [6525 6844])
+            ("LoadLocalAwsCredentials" function (:documentation "Load the AWS credentials for the current resolved account.
+
+  Returns:
+    An (access_key_id, secret_key) tuple.
+  ") nil [6845 7121])
+            ("LoadProdAwsCredentials" function (:documentation "Load the AWS credentials for the 'prod' account.
+
+  Returns:
+    An (access_key_id, secret_key) tuple.
+  ") nil [7122 7308])
+            ("LoadRoAwsCredentials" function (:documentation "Load the AWS credentials for the 'ro' account.
+
+  Returns:
+    An (access_key_id, secret_key) tuple.
+  ") nil [7309 7489])
+            ("LoadCloudFrontAwsCredentials" function (:documentation "Load access and secret keys for AWS CloudFront.
+
+  Returns:
+    Tuple of (cloudfront_access_key, cloudfront_secret_key).
+  ") nil [7490 7768])
+            ("LoadFbAdsApiCredentials" function (:documentation "Load Facebook credentials.
+
+  NOTE(kevinw): fb_ads_api_access_token is deprecated, please use
+  fb_ads_account_api_access_token instead.
+
+  Returns:
+    Tuple of (fb_ads_api_app_id, fb_ads_api_app_secret, fb_ads_api_access_token,
+    fb_ads_account_api_access_token).
+  ") nil [7769 8302])
+            ("LoadMySQLCredentials" function (:documentation "Load the MySQL credentials for the 'prod' account.
+
+  Returns:
+    A (mysql_user, mysql_passwd) tuple.
+  ") nil [8303 8536])
+            ("LoadNagiosCredentials" function (:documentation "Load the Nagios credentials.
+
+  Returns:
+    An (nagios_user, nagios_passwd) tuple.
+  ") nil [8537 8754])
+            ("LoadFeedFtpCredentials" function (:documentation "Load the TellApart Feed FTP credentials.
+
+  Returns:
+    An (ftp_user, ftp_passwd) tuple.
+  ") nil [8755 8979])
+            ("LoadEmailCredentials" function (:documentation "Load the Email credentials (Google account).
+
+  Returns:
+    An (email_sender, email_passwd) tuple.
+  ") nil [8980 9214])
+            ("LoadGomezCredentials" function (:documentation "Load the Gomez credentials.
+
+  Returns:
+    An (gomez_account, gomez_passwd) tuple.
+  ") nil [9215 9429])
+            ("LoadAdwordsAPIKeys" function (:documentation "Load the Adwords API keys.
+
+  Returns:
+    An (adwords_api_account, adwords_api_password, adwords_developer_token)
+    tuple.
+  ") nil [9430 9756])
+            ("LoadPingdomCredentials" function (:documentation "Load the Pingdom credentials.
+
+  Returns:
+    A tuple of (pingdom_user, pingdom_passwd, pingdom_api_key)
+  ") nil [9757 10047])
+            ("LoadAuthCipher" function (:documentation "Loads the dashboard auth cipher.
+
+  Returns:
+    The auth cipher to be used on the dashboard.
+  ") nil [10048 10240])
+            ("LoadUdlCredentials" function (:documentation "Loads the /udl access token secret.
+
+  Returns:
+    The access token secret for /udl API calls.
+  ") nil [10241 10429]))          
+    :file "key_util.py"
+    :pointmax 10429
+    :fsize 10428
+    :lastmodtime '(21380 53352 0 0)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "key_manager.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("\"\"\"Classes for managing access to Key Accessors, implementing the specific
+inconsistencies between different deployments.
+\"\"\"" code nil nil [1 126])
+            ("__copyright__" variable nil nil [128 201])
+            ("os" include nil nil [203 212])
+            ("tellapart.settings" include nil nil [214 261])
+            ("tellapart.settings" include nil nil [262 308])
+            ("tellapart.util" include nil nil [309 345])
+            ("LOG" variable nil nil [347 389])
+            ("KeyManager" type
+               (:documentation "Abstract base-class for Key Manager objects, which present a consistent API
+  wrapping account-specific idiosyncrasies.
+  "
+                :superclasses ("object")
+                :members 
+                  ( ("GetKey" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [562 566])
+                            ("account" variable nil (reparse-symbol function_parameters) [568 575])
+                            ("key_name" variable nil (reparse-symbol function_parameters) [577 585]))                          
+                        :documentation "Retrieve the value of a key for an account.
+
+    Args:
+      account - Account name from which to retrieve the key.
+      key_name - Name of the key to retrieve.
+
+    Returns:
+      The value of the key for the account. If the key doesn't exist or is
+      inaccessible, None is returned.
+    ")
+                        (reparse-symbol indented_block_body) [551 924])
+                    ("GetKeyFilePath" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [946 950])
+                            ("account" variable nil (reparse-symbol function_parameters) [952 959])
+                            ("key_name" variable nil (reparse-symbol function_parameters) [961 969]))                          
+                        :documentation "Return the local absolute path the the SSH .pem file.
+
+    TODO(kevin): This is a hack to maintain backwards compatibility. Remove it
+    whenever possible.
+
+    Args:
+      account - Account name of the key file.
+      key_name - Name of the key file to retrieve.
+
+    Returns:
+      The local absolute path to the requested key file If the key doesn't
+      exist or is inaccessible, None is returned.
+    ")
+                        (reparse-symbol indented_block_body) [927 1423])
+                    ("RegisterObserver" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1447 1451])
+                            ("account" variable nil (reparse-symbol function_parameters) [1453 1460])
+                            ("key_names" variable nil (reparse-symbol function_parameters) [1462 1471])
+                            ("callback" variable nil (reparse-symbol function_parameters) [1473 1481]))                          
+                        :documentation "Register a observer of a set of keys for an account. If any of the keys
+    change value, the callback wil be executed.
+
+    Args:
+      account - Account name of rht keys to watch.
+      key_names - List of key names to watch for changes.
+      callback - Callable to execute if any of the keys change values.
+    ")
+                        (reparse-symbol indented_block_body) [1426 1842])
+                    ("StartPeriodicChecking" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1871 1875])
+                            ("period_seconds" variable nil (reparse-symbol function_parameters) [1877 1891]))                          
+                        :documentation "Begin periodic monitoring of the backing-store for changes to the values
+    of keys being used.
+
+    Args:
+      period_seconds - Period in seconds between checks for changes.
+    ")
+                        (reparse-symbol indented_block_body) [1845 2118]))                  
+                :type "class")
+                nil [391 2118])
+            ("LocalKeyManager" type
+               (:documentation "Key Manager intended to be used locally on development machines. Backed by
+  a local Key Container.
+  "
+                :superclasses ("KeyManager")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("tellapart.util.keys.key_accessor" include nil (reparse-symbol indented_block_body) [2292 2362])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2367 2390])
+                            ("for" code nil (reparse-symbol indented_block_body) [2395 2528]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2281 2285]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2268 2528])
+                    ("GetKey" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2542 2546])
+                            ("account" variable nil (reparse-symbol function_parameters) [2548 2555])
+                            ("key_name" variable nil (reparse-symbol function_parameters) [2557 2565]))                          
+                        :documentation "See KeyManager")
+                        (reparse-symbol indented_block_body) [2531 2859])
+                    ("GetKeyFilePath" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2881 2885])
+                            ("account" variable nil (reparse-symbol function_parameters) [2887 2894])
+                            ("key_name" variable nil (reparse-symbol function_parameters) [2896 2904]))                          
+                        :documentation "See KeyManager")
+                        (reparse-symbol indented_block_body) [2862 3363])
+                    ("RegisterObserver" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3387 3391])
+                            ("account" variable nil (reparse-symbol function_parameters) [3393 3400])
+                            ("key_names" variable nil (reparse-symbol function_parameters) [3402 3411])
+                            ("callback" variable nil (reparse-symbol function_parameters) [3413 3421]))                          
+                        :documentation "See KeyManager")
+                        (reparse-symbol indented_block_body) [3366 3727])
+                    ("StartPeriodicChecking" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3756 3760])
+                            ("period_seconds" variable nil (reparse-symbol function_parameters) [3762 3776]))                          
+                        :documentation "Override: This is not applicable to local files.")
+                        (reparse-symbol indented_block_body) [3730 3847]))                  
+                :type "class")
+                nil [2119 3847])
+            ("DeployedKeyManager" type
+               (:documentation "Abstract base-class implementing common methods for Key Managers used in
+  the production environment. Backed by a remote Controller Key Server. Account
+  specific idiosyncracies are implemented in sub-classes.
+  "
+                :superclasses ("KeyManager")
+                :members 
+                  ( ("_KEY_OVERRIDES" variable nil (reparse-symbol indented_block_body) [4251 4270])
+                    ("_KEY_COPIES" variable nil (reparse-symbol indented_block_body) [4447 4463])
+                    ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+    Args:
+      current_account - Account name specifier indicating the AWS account in
+          which this is running. Used to determine which Controller Key Server
+          can be contacted.
+    \"\"\"" code nil (reparse-symbol indented_block_body) [4508 4713])
+                            ("super" code nil (reparse-symbol indented_block_body) [4718 4760])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4766 4801])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4806 4871]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4480 4484])
+                            ("current_account" variable nil (reparse-symbol function_parameters) [4486 4501]))                          
+                        :documentation "
+    Args:
+      current_account - Account name specifier indicating the AWS account in
+          which this is running. Used to determine which Controller Key Server
+          can be contacted.
+    "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [4467 4872])
+                    ("_MakeKeyAccessor" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4896 4900])
+                            ("account" variable nil (reparse-symbol function_parameters) [4902 4909]))                          
+                        :documentation "Instantiate a RemoteKeyServerAccessor for the given account, in the
+    current region.
+
+    Args:
+      account - Account name to create the RemoteKeyServerAccessor for.
+
+    Returns:
+      An instantiated RemoteKeyServerAccessor for the account and region.
+    ")
+                        (reparse-symbol indented_block_body) [4875 5450])
+                    ("GetKey" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5464 5468])
+                            ("account" variable nil (reparse-symbol function_parameters) [5470 5477])
+                            ("key_name" variable nil (reparse-symbol function_parameters) [5479 5487]))                          
+                        :documentation "See KeyManager.GetKey()
+
+    This implementation allows 'overrides' to be applied as well, where a key
+    for (account_1, key_1) will be transparently mapped to (account_2, key_2).
+    ")
+                        (reparse-symbol indented_block_body) [5453 6145])
+                    ("GetKeyFilePath" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6167 6171])
+                            ("account" variable nil (reparse-symbol function_parameters) [6173 6180])
+                            ("key_name" variable nil (reparse-symbol function_parameters) [6182 6190]))                          
+                        :documentation "See KeyManager.GetKeyFilePath()
+
+    This implementation hard-codes the base path to '/root/keys', since that's
+    where the deployers put the keys (but only to certain instances).
+    ")
+                        (reparse-symbol indented_block_body) [6148 6667])
+                    ("RegisterObserver" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6691 6695])
+                            ("account" variable nil (reparse-symbol function_parameters) [6697 6704])
+                            ("key_names" variable nil (reparse-symbol function_parameters) [6706 6715])
+                            ("callback" variable nil (reparse-symbol function_parameters) [6717 6725]))                          
+                        :documentation "See KeyManager")
+                        (reparse-symbol indented_block_body) [6670 6942])
+                    ("StartPeriodicChecking" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6971 6975])
+                            ("period_seconds" variable nil (reparse-symbol function_parameters) [6977 6991]))                          
+                        :documentation "See KeyManager")
+                        (reparse-symbol indented_block_body) [6945 7084]))                  
+                :type "class")
+                nil [3848 7084])
+            ("ProdKeyManager" type
+               (:documentation "Key Manager for the 'prod' account.
+
+  The specialization for this account allows it to access the 'devel' account's
+  Controller Key Server.
+  "
+                :superclasses ("DeployedKeyManager")
+                :members 
+                  ( ("_KEY_COPIES" variable nil (reparse-symbol indented_block_body) [7282 7533])
+                    ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"\"\"\"" code nil (reparse-symbol indented_block_body) [7561 7567])
+                            ("super" code nil (reparse-symbol indented_block_body) [7572 7639])
+                            ("self" variable nil (reparse-symbol indented_block_body) [7824 7854]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7550 7554]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [7537 7855])
+                    ("GetKey" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7869 7873])
+                            ("account" variable nil (reparse-symbol function_parameters) [7875 7882])
+                            ("key_name" variable nil (reparse-symbol function_parameters) [7884 7892]))                          
+                        :documentation "See KeyManager")
+                        (reparse-symbol indented_block_body) [7858 8314]))                  
+                :type "class")
+                nil [7085 8314])
+            ("RoKeyManager" type
+               (:documentation "Key Manager for the 'ro' account.
+
+  The specialization for this account is a pair of overrides, where the 'prod'
+  account 'aws_access_key' and 'aws_secret_key' are loaded to the 'ro' account
+  under different names.
+  "
+                :superclasses ("DeployedKeyManager")
+                :members 
+                  ( ("_KEY_OVERRIDES" variable nil (reparse-symbol indented_block_body) [8586 8768])
+                    ("_KEY_COPIES" variable nil (reparse-symbol indented_block_body) [8772 9221])
+                    ("__init__" function
+                       (:suite 
+                          ( ("super" code nil (reparse-symbol indented_block_body) [9249 9312]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9238 9242]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [9225 9313]))                  
+                :type "class")
+                nil [8315 9313])
+            ("DevelKeyManager" type
+               (:documentation "Key Manager for the 'ro' account.
+
+  There are currently no specializations for this account.
+  "
+                :superclasses ("DeployedKeyManager")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"\"\"\"" code nil (reparse-symbol indented_block_body) [9489 9495])
+                            ("super" code nil (reparse-symbol indented_block_body) [9500 9569]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9478 9482]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [9465 9570]))                  
+                :type "class")
+                nil [9314 9570]))          
+    :file "key_manager.py"
+    :pointmax 9570
+    :fsize 9569
+    :lastmodtime '(21380 53352 0 0)
+    :unmatched-syntax '(($EOI 9570 . 9570) ($EOI 9575 . 9575))
+    )
+   (semanticdb-table "key_accessor.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("\"\"\"Classes for accessing Credentials (Keys) from various backing stores, and
+watching those stores for updates (where appropriate).
+\"\"\"" code nil nil [1 136])
+            ("__copyright__" variable nil nil [138 211])
+            ("gevent" include nil nil [213 226])
+            ("os" include nil nil [227 236])
+            ("time" include nil nil [237 248])
+            ("traceback" include nil nil [249 265])
+            ("tellapart.util" include nil nil [267 303])
+            ("tellapart.util" include nil nil [304 339])
+            ("tellapart.util" include nil nil [340 380])
+            ("tellapart.util" include nil nil [381 419])
+            ("tellapart.util.monitored_resource_ring" include nil nil [420 492])
+            ("LOG" variable nil nil [494 536])
+            ("KeyAccessor" type
+               (:documentation "Abstract base class for accessing keys. Sub-classes implement the logic
+  for specific backing stores.
+  "
+                :superclasses ("object")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [706 721])
+                            ("self" variable nil (reparse-symbol indented_block_body) [726 745])
+                            ("self" variable nil (reparse-symbol indented_block_body) [751 772])
+                            ("self" variable nil (reparse-symbol indented_block_body) [777 798]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [695 699]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [682 799])
+                    ("_RetrieveKey" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [819 823])
+                            ("key_name" variable nil (reparse-symbol function_parameters) [825 833]))                          
+                        :documentation "Retrieve the value of a key from the backing store.
+
+    Args:
+      key_name - Key name to retrieve the value of.
+
+    Returns:
+      The value of the requested key, or None is it does not exist.
+    ")
+                        (reparse-symbol indented_block_body) [802 1123])
+                    ("GetKey" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1137 1141])
+                            ("key_name" variable nil (reparse-symbol function_parameters) [1143 1151]))                          
+                        :documentation "Retrieve the value of a key. If the key is not cached, it will be
+    looked-up. If it is not available, None is returned instead.
+
+    Args:
+      key_name - Key name to retrieve the value of.
+
+    Returns:
+      Value of the requested key, or None if it is not available.
+    ")
+                        (reparse-symbol indented_block_body) [1126 1789])
+                    ("RegisterObserver" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1813 1817])
+                            ("observed_keys" variable nil (reparse-symbol function_parameters) [1819 1832])
+                            ("callback" variable nil (reparse-symbol function_parameters) [1834 1842]))                          
+                        :documentation "Register a callback to be invoked when any key in a set is modified.
+
+    Args:
+      callback - Callable (that accepts no arguments) to be invoked when any of
+          the observed keys change value. If multiple observed keys are
+          modified simultaneously, the callable is only invokes once.
+      observed_keys - Iterable of key names to observe for changes.
+    ")
+                        (reparse-symbol indented_block_body) [1792 2355])
+                    ("StartPeriodicChecking" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2384 2388])
+                            ("period_seconds" variable nil (reparse-symbol function_parameters) [2390 2404]))                          
+                        :documentation "Begin a background process to periodically check all loaded keys for
+    changes.
+
+    Args:
+      period_seconds - The period, in seconds, between checks.
+    ")
+                        (reparse-symbol indented_block_body) [2358 2781])
+                    ("_SetKeys" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2797 2801])
+                            ("key_value_map" variable nil (reparse-symbol function_parameters) [2803 2816]))                          
+                        :documentation "Set the value of several keys.
+
+    NOTE: If several keys change at the same time, this function should be
+    called once with a list of all the keys that changed. Doing so will minimize
+    duplicate callbacks to observers.
+
+    Args:
+      key_value_map - Dict of {Key: Value} pairs to update.
+    ")
+                        (reparse-symbol indented_block_body) [2784 3779])
+                    ("_UpdateAllKeys" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3801 3805]))                          
+                        :documentation "Re-retrieve all known keys from the backing store, and update any that
+    have changed.
+    ")
+                        (reparse-symbol indented_block_body) [3782 4532]))                  
+                :type "class")
+                nil [538 4532])
+            ("_RemoteKeyServerPool" type
+               (:documentation "ResourcePool (shim) implementation to integrate with MonitoredResourceRing.
+  "
+                :superclasses ("resource_pool.ResourcePool")
+                :members 
+                  ( ("HEALTH_CHECK_ATTEMPTS" variable nil (reparse-symbol indented_block_body) [4786 4811])
+                    ("HEALTH_CHECK_DELAY_SEC" variable nil (reparse-symbol indented_block_body) [4855 4881])
+                    ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"Initializes the \"resource pool\".
+    \"\"\"" code nil (reparse-symbol indented_block_body) [4920 4963])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4968 4994])
+                            ("super" code nil (reparse-symbol indented_block_body) [4999 5088]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4898 4902])
+                            ("keyserver" variable nil (reparse-symbol function_parameters) [4904 4913]))                          
+                        :documentation "Initializes the \"resource pool\".
+    "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [4885 5089])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5105 5109]))                          
+                        :documentation "String representation for printing out.
+    ")
+                        (reparse-symbol indented_block_body) [5092 5222])
+                    ("_CreateResource" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5245 5249]))                          
+                        :documentation "See ResourcePool._CreateResource()
+    ")
+                        (reparse-symbol indented_block_body) [5225 5328])
+                    ("_CheckServiceHealth" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5355 5359]))                          
+                        :documentation "See ResourcePool._CheckServiceHealth()
+    ")
+                        (reparse-symbol indented_block_body) [5331 5630])
+                    ("_CheckServiceHealthOnce" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5661 5665]))                          
+                        :documentation "Check the health of the provided keyserver.
+    ")
+                        (reparse-symbol indented_block_body) [5633 5949]))                  
+                :type "class")
+                nil [4533 5949])
+            ("RemoteKeyServerAccessor" type
+               (:documentation "KeyManager backed by a remote Key Server.
+  "
+                :superclasses ("KeyAccessor")
+                :members 
+                  ( ("REQUEST_FAILURE_RETRIES" variable nil (reparse-symbol indented_block_body) [6049 6076])
+                    ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+    Args:
+      keyserver_hostnames - DNS host-names of the Keyservers to
+          contact to retrieve key values.
+      account - Account name under which this accessor is running
+    \"\"\"" code nil (reparse-symbol indented_block_body) [6139 6332])
+                            ("super" code nil (reparse-symbol indented_block_body) [6337 6384])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6389 6411])
+                            ("self" variable nil (reparse-symbol indented_block_body) [6417 6559]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6093 6097])
+                            ("keyserver_hostnames" variable nil (reparse-symbol function_parameters) [6099 6118])
+                            ("account" variable nil (reparse-symbol function_parameters) [6120 6127]))                          
+                        :documentation "
+    Args:
+      keyserver_hostnames - DNS host-names of the Keyservers to
+          contact to retrieve key values.
+      account - Account name under which this accessor is running
+    "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [6080 6560])
+                    ("_RetrieveKey" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6580 6584])
+                            ("key_name" variable nil (reparse-symbol function_parameters) [6586 6594]))                          
+                        :documentation "Retrieve the value of the requested key from the remote key
+    server. Will retry a fixed number of times if the request fails with an
+    exception.
+    ")
+                        (reparse-symbol indented_block_body) [6563 7654]))                  
+                :type "class")
+                nil [5950 7654])
+            ("LocalContainerKeyAccessor" type
+               (:documentation "KeyManager which uses a set of local files (i.e. a Key Container) as the
+  backing store. This is intended to be used locally on development machines.
+  "
+                :superclasses ("KeyAccessor")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+    Args:
+      account_name - Account name to load keys from the Key Container for
+          (e.g. 'prod').
+    \"\"\"" code nil (reparse-symbol indented_block_body) [7904 8024])
+                            ("super" code nil (reparse-symbol indented_block_body) [8029 8078])
+                            ("key_dir_root" variable nil (reparse-symbol indented_block_body) [8139 8177])
+                            ("if" code nil (reparse-symbol indented_block_body) [8182 8285])
+                            ("key_container_path" variable nil (reparse-symbol indented_block_body) [8290 8351])
+                            ("self" variable nil (reparse-symbol indented_block_body) [8356 8432]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7879 7883])
+                            ("account_name" variable nil (reparse-symbol function_parameters) [7885 7897]))                          
+                        :documentation "
+    Args:
+      account_name - Account name to load keys from the Key Container for
+          (e.g. 'prod').
+    "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [7866 8433])
+                    ("_RetrieveKey" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8453 8457])
+                            ("key_name" variable nil (reparse-symbol function_parameters) [8459 8467]))                          
+                        :documentation "Retrieve the value of the requested key from the local Key Container.
+    ")
+                        (reparse-symbol indented_block_body) [8436 8686])
+                    ("_RetrieveRawKeyObject" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8715 8719])
+                            ("key_name" variable nil (reparse-symbol function_parameters) [8721 8729]))                          
+                        :documentation "Retrieve the direct Bunch object for the key name from the Key Container.
+    This is necessary for keys that have more than just the 'value' field (e.g.
+    the SSH key-pair)
+
+    TODO(kevin): Remove this inconsistency in the interface.
+
+    Args:
+      key_name - Name of the key object to retrieve.
+
+    Returns:
+      The Bunch object for the key, retrieved directly from the Key Container.
+    ")
+                        (reparse-symbol indented_block_body) [8689 9198]))                  
+                :type "class")
+                nil [7655 9198]))          
+    :file "key_accessor.py"
+    :pointmax 9198
+    :fsize 9197
+    :lastmodtime '(21380 53352 0 0)
+    :unmatched-syntax '((INDENT_BLOCK 7575 . 7637) (NEWLINE 7574 . 7575) (COLON 7573 . 7574) (FINALLY 7566 . 7573) (NAME 7020 . 7023) (IF 7084 . 7086) (ELSE 7124 . 7128))
+    )
+   )
+  :file "!Users!matt!dev!tellapart!py!tellapart!util!keys!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

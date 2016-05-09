@@ -1,0 +1,253 @@
+;; Object js/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "js/"
+  :tables (list 
+   (semanticdb-table "fabfile.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("\"\"\"Assembles a build of 'crumb.js' and optionally pushes it out to
+production (CloudFront).
+
+Frontend machines will pick it up within ~10 minutes to serve SSL
+requests for crumb.js
+
+You can override Closure Compiler for minification of JS by setting env variable
+CLOSURE_COMPILER_JAR.
+
+Examples:
+
+(Build a development version of crumb.js.)
+# fab devel make
+
+(Build a unit testing version of crumb.js.)
+# fab testing make
+
+(Build a production version of crumb.js.)
+# fab prod make
+
+(Build a production version of crumb.js and push it live.)
+# fab prod make prod_push
+
+(Build a production version of crumb.js without minifying it. E.g. if you want
+to deploy to a test crumb.js server.)
+# fab prod:minify=0 make
+
+(Build a production version of crumb.js and push it live to half the S3
+ buckets.)
+# fab prod make prod_push:percent_deploy=50
+
+(Start a request to refresh crumb files on all CloudFront cdn end points.)
+# fab refresh_cloudfront_crumb_js
+
+(Check the status of an existing cloudFront refresh request.
+# fab check_refresh_cloudfront
+
+(Start a request to refresh offers per merchant CSS files on all CloudFront cdn
+ end points.)
+# fab refresh_cloudfront_css
+
+(Start a request to refresh offers per merchant CSS files for a specific
+ merchant (Wayfair in this example).)
+# fab refresh_cloudfront_css:merchant_id=33xvpvA4Pas9
+
+(Push out all per merchant Offers CSS)
+# fab prod_push_css
+
+(Push out all per merchant Offers CSS to single merchant)
+# fab prod_push_css:merchant_id=33xvpvA4Pas9
+\"\"\"" code nil nil [1 1498])
+            ("os" include nil nil [1500 1509])
+            ("re" include nil nil [1510 1519])
+            ("tempfile" include nil nil [1520 1535])
+            ("boto" include nil nil [1537 1548])
+            ("fabric.api" include nil nil [1549 1573])
+            ("tellapart.deploy.crumbjs" include nil nil [1575 1631])
+            ("tellapart.deploy.deploy_util" include nil nil [1632 1682])
+            ("tellapart.deploy.pusher" include nil nil [1683 1727])
+            ("tellapart.frontend.dashboard.ids" include nil nil [1728 1796])
+            ("tellapart.util" include nil nil [1797 1836])
+            ("tellapart.util" include nil nil [1837 1872])
+            ("tellapart.util" include nil nil [1873 1912])
+            ("tellapart.util.keys" include nil nil [1913 1953])
+            ("tellapart_gen.serverlog.ids" include nil nil [1955 2011])
+            ("env" variable nil nil [2144 2188])
+            ("env" variable nil nil [2241 2288])
+            ("env" variable nil nil [2356 2374])
+            ("HOURS_BEFORE_CACHE_EXPIRATION" variable nil nil [2471 2504])
+            ("MERCHANTS_OFFERS_STYLES_S3_BASEPATH" variable nil nil [2663 2725])
+            ("MERCHANTS_OFFERS_STYLES_FILENAME" variable nil nil [2726 2773])
+            ("LOCAL_BUILD_DIR" variable nil nil [2809 2837])
+            ("DEFAULT_CLOSURE_COMPILER_JAR" variable nil nil [2906 2999])
+            ("CSS_PATH" variable nil nil [3034 3053])
+            ("CSS_DEFAULT" variable nil nil [3055 3078])
+            ("OFFERS_CSS_MERCHANTS" variable nil nil [3174 3487])
+            ("STANDALONE_CSS_MERCHANTS" variable nil nil [3654 3733])
+            ("assert" code nil nil [3822 3885])
+            ("JS_HEADERS" variable nil nil [3888 4290])
+            ("CSS_HEADERS" variable nil nil [4323 4353])
+            ("prod" function
+               (:documentation "Define this as a production build of crumb.js.
+  "
+                :arguments 
+                  ( ("minify" variable nil (reparse-symbol function_parameters) [4364 4370]))                  )
+                nil [4355 4492])
+            ("devel" function (:documentation "Define this as a development build of crumb.js.
+  ") nil [4493 4592])
+            ("testing" function (:documentation "Define this as a unit testing build of crumb.js.
+  ") nil [4593 4697])
+            ("make" function (:documentation "Make crumb.js
+  ") nil [4698 6364])
+            ("check_refresh_cloudfront" function (:documentation "Checks the status of a cloudFront refresh request.
+  ") nil [6365 6785])
+            ("refresh_cloudfront" function
+               (:documentation "Refresh the cloudFront end points to pick latest files for s3 bucket.
+
+  Args:
+    paths - An array of string representing paths to do refresh cdn end points
+            for eg. ['/crumb.js', '/crumb2.js' ...], For more reference on path
+            format http://bit.ly/fdrpN0
+            Also may be a string of colon separated paths
+    domain - The cdn domain name for these paths
+             eg. static.tellaparts.com, cr.tellaparts.com
+    batch_id - ID for the refresh request (Default: prompt user)
+  "
+                :arguments 
+                  ( ("paths" variable nil (reparse-symbol function_parameters) [6809 6814])
+                    ("domain" variable nil (reparse-symbol function_parameters) [6816 6822])
+                    ("batch_id" variable nil (reparse-symbol function_parameters) [6824 6832]))                  )
+                nil [6786 8092])
+            ("refresh_cloudfront_dust_templates" function (:documentation "Refreshes cloudfront for dust templates.
+  ") nil [8093 8626])
+            ("refresh_cloudfront_crumb_js" function
+               (:documentation "Refresh the cloudFront end points for crumb.js.
+
+  Args:
+    per_merchant_endpoints - Whether to refresh per merchant JS endpoints.
+  "
+                :arguments 
+                  ( ("per_merchant_endpoints" variable nil (reparse-symbol function_parameters) [8659 8681]))                  )
+                nil [8627 9023])
+            ("refresh_cloudfront_validator_js" function (:documentation "Refresh the cloudFront end points for validator/compiled.js.
+  ") nil [9024 9209])
+            ("refresh_cloudfront_css" function
+               (:documentation "Refresh the cloudFront end points to pick latest files for s3 bucket.
+
+  Args:
+    merchant_id - Merchant account ID of merchant whose offers CSS file we want
+                  to refresh.
+  "
+                :arguments 
+                  ( ("merchant_id" variable nil (reparse-symbol function_parameters) [9237 9248]))                  )
+                nil [9210 9820])
+            ("make_css" function
+               (:documentation "Make per merchant CSS files and output them to LOCAL_BUILD_DIR.
+
+  Will make for all merchants if merchant_id not specified.
+
+  Args:
+    merchant_id - Merchant account ID of merchant whose offers CSS file we want
+                  to make.
+    clean_build - Clean build directory before making.
+  "
+                :arguments 
+                  ( ("merchant_id" variable nil (reparse-symbol function_parameters) [9834 9845])
+                    ("clean_build" variable nil (reparse-symbol function_parameters) [9852 9863]))                  )
+                nil [9821 10847])
+            ("prod_push_css" function
+               (:documentation "Push per merchant CSS files out to production.
+
+  Will push for all merchants if merchant_id not specified.
+
+  Args:
+    merchant_id - Merchant account ID of merchant whose offers CSS file we want
+                  to push.
+    should_make - Whether to make before pushing.
+  "
+                :arguments 
+                  ( ("merchant_id" variable nil (reparse-symbol function_parameters) [10866 10877])
+                    ("should_make" variable nil (reparse-symbol function_parameters) [10884 10895]))                  )
+                nil [10848 12130])
+            ("_GetActionableMerchantList" function
+               (:documentation "Gets merchant list from command line arg merchant id.
+
+  If no merchant ID specified, defaults to using entire merchant_list.
+
+  Prints warnings and pauses for user to exit script.
+
+  Args:
+    merchant_id - Merchant account ID.
+    merchant_list - List of merchants to fall back to if no merchant account ID.
+
+  Returns:
+    List of merchants to perform action on.
+  "
+                :arguments 
+                  ( ("merchant_id" variable nil (reparse-symbol function_parameters) [12162 12173])
+                    ("merchant_list" variable nil (reparse-symbol function_parameters) [12175 12188]))                  )
+                nil [12131 13070])
+            ("local_test_push" function (:documentation "Copies crumb.js and offers.css to a LOCAL_BUILD_DIR which you can point a
+  server to for local testing.
+
+  NOTE: You have to call prod make before this to compile a new version.
+  ") nil [13071 13803])
+            ("prod_push" function
+               (:documentation "Push crumb.js out to production.
+
+  Args:
+    percent_deploy - Percentage of S3 buckets to deploy to. We round down to the
+                     nearest int. E.g. if you want to deploy to 49% of 10
+                     buckets, it will deploy to 4 buckets.
+    per_merchant_endpoints - Whether to push to per merchant JS endpoints.
+  "
+                :arguments 
+                  ( ("percent_deploy" variable nil (reparse-symbol function_parameters) [13818 13832])
+                    ("per_merchant_endpoints" variable nil (reparse-symbol function_parameters) [13838 13860]))                  )
+                nil [13804 15565])
+            ("_AssertValidBuildType" function (:documentation "Asserts that the build type is valid.
+  ") nil [15566 15760])
+            ("CSS_FILE_TEMPLATE_PATTERN" variable nil nil [15849 15885])
+            ("CSS_FILE_TEMPLATE_REGEX" variable nil nil [15886 15965])
+            ("ReplaceCssTemplates" function
+               (:documentation "Returns a new string with the original js_string's CSS template
+  declarations replaced with a string constructed from the CSS from the
+  respective file name.
+
+  Args:
+    js_string - JavaScript string that might have CSS templates e.g.
+                <<file.css>>
+  Returns:
+    New string from js_string with CSS templates replaced by the actual CSS
+    strings.
+  "
+                :arguments 
+                  ( ("js_string" variable nil (reparse-symbol function_parameters) [15991 16000]))                  )
+                nil [15967 16826])
+            ("_CssLocalPath" function
+               (:documentation "Returns local path of pre-compiled CSS file for merchant.
+
+  Args:
+    merchant_id - Merchant account ID.
+  "
+                :arguments 
+                  ( ("merchant_id" variable nil (reparse-symbol function_parameters) [16845 16856]))                  )
+                nil [16827 17055])
+            ("_CssBuildPath" function
+               (:documentation "Returns local path of compiled CSS file for merchant.
+
+  Args:
+    merchant_id - Merchant account ID.
+  "
+                :arguments 
+                  ( ("merchant_id" variable nil (reparse-symbol function_parameters) [17074 17085]))                  )
+                nil [17056 17346]))          
+    :file "fabfile.py"
+    :pointmax 17346
+    :fsize 17345
+    :lastmodtime '(21390 23212 0 0)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!Users!matt!dev!tellapart!crumb!js!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

@@ -1,0 +1,36 @@
+;; Object settings/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "settings/"
+  :tables (list 
+   (semanticdb-table "account_settings.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("\"\"\"Module containing common constants relating to AWS and Key Accounts.
+\"\"\"" code nil nil [1 76])
+            ("__copyright__" variable nil nil [78 151])
+            ("ACCOUNT_LOCAL" variable nil nil [177 200])
+            ("ACCOUNT_PROD_ID" variable nil nil [202 234])
+            ("ACCOUNT_RO_ID" variable nil nil [235 265])
+            ("ACCOUNT_DEVEL_ID" variable nil nil [266 299])
+            ("ACCOUNT_BACKUP_ID" variable nil nil [300 334])
+            ("ACCOUNT_PROD" variable nil nil [352 373])
+            ("ACCOUNT_RO" variable nil nil [374 391])
+            ("ACCOUNT_DEVEL" variable nil nil [392 415])
+            ("ACCOUNT_PROD_EMAIL" variable nil nil [435 479])
+            ("ACCOUNT_RO_EMAIL" variable nil nil [480 526])
+            ("ACCOUNT_DEVEL_EMAIL" variable nil nil [527 573])
+            ("ACCOUNTS" variable nil nil [625 677])
+            ("ACCOUNT_ID_NAME_MAP" variable nil nil [735 855])
+            ("ACCOUNT_NAME_ID_MAP" variable nil nil [913 1035])
+            ("ACCOUNT_EMAIL_MAP" variable nil nil [1084 1213]))          
+    :file "account_settings.py"
+    :pointmax 1214
+    :fsize 1213
+    :lastmodtime '(21380 53352 0 0)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!Users!matt!dev!tellapart!py!tellapart!settings!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

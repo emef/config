@@ -1,0 +1,152 @@
+;; Object summary/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "summary/"
+  :tables (list 
+   (semanticdb-table "PageViewExtractor.java"
+    :major-mode 'malabar-mode
+    :tags 
+        '( ("com.tellapart.summary" package nil (reparse-symbol package_declaration) [1 31])
+            ("com.tellapart.crumb.Constants" include nil (reparse-symbol import_declaration) [33 70])
+            ("com.tellapart.crumb.CrumbActionDetails" include nil (reparse-symbol import_declaration) [71 117])
+            ("com.tellapart.identity.api.SID" include nil (reparse-symbol import_declaration) [118 156])
+            ("com.tellapart.rye.crumb.CrumbActionException" include nil (reparse-symbol import_declaration) [157 209])
+            ("com.tellapart.rye.serverentry.utils.ServerEntryUtils" include nil (reparse-symbol import_declaration) [210 270])
+            ("com.tellapart.serverlog.ServerLogEntry" include nil (reparse-symbol import_declaration) [271 317])
+            ("com.tellapart.serverlog.ids.Merchant" include nil (reparse-symbol import_declaration) [318 362])
+            ("com.tellapart.summary.api.SummaryEventContext" include nil (reparse-symbol import_declaration) [363 416])
+            ("com.tellapart.summary.api.SummaryIncrement" include nil (reparse-symbol import_declaration) [417 467])
+            ("com.tellapart.summary.api.SummaryIncrementData" include nil (reparse-symbol import_declaration) [468 522])
+            ("com.tellapart.summary.api.SummaryType" include nil (reparse-symbol import_declaration) [523 568])
+            ("com.tellapart.utils.IdUtil" include nil (reparse-symbol import_declaration) [569 603])
+            ("java.util.Map" include nil (reparse-symbol import_declaration) [605 626])
+            ("com.tellapart.identity.IdentityUtils.getPrimarySid" include (:static-flag t) (reparse-symbol import_declaration) [628 693])
+            ("PageViewExtractor" type
+               (:typemodifiers ("public" "abstract")
+                :superclasses "SummaryExtractor"
+                :members 
+                  ( ("PVInfo" type
+                       (:typemodifiers ("protected" "static")
+                        :members 
+                          ( ("merchant" variable
+                               (:typemodifiers ("public" "final")
+                                :type "Merchant")
+                                (reparse-symbol field_declaration) [913 944])
+                            ("cad" variable
+                               (:typemodifiers ("public" "final")
+                                :type "CrumbActionDetails")
+                                (reparse-symbol field_declaration) [949 985])
+                            ("crumbPageType" variable
+                               (:typemodifiers ("public" "final")
+                                :type "String")
+                                (reparse-symbol field_declaration) [990 1024])
+                            ("crumbActionType" variable
+                               (:typemodifiers ("public" "final")
+                                :type "String")
+                                (reparse-symbol field_declaration) [1029 1065])
+                            ("PVInfo" function
+                               (:constructor-flag t
+                                :typemodifiers ("public")
+                                :arguments 
+                                  ( ("merchant" variable (:type "Merchant") (reparse-symbol formal_parameter) [1085 1102])
+                                    ("crumbActionDetails" variable (:type "CrumbActionDetails") (reparse-symbol formal_parameter) [1104 1141])
+                                    ("crumbPageType" variable (:type "String") (reparse-symbol formal_parameter) [1143 1163])
+                                    ("crumbActionType" variable (:type "String") (reparse-symbol formal_parameter) [1173 1195]))                                  )
+                                (reparse-symbol constructor_declaration) [1071 1361]))                          
+                        :type "class")
+                        (reparse-symbol class_declaration) [877 1365])
+                    ("extractIncrementData" function
+                       (:typemodifiers ("protected" "abstract")
+                        :arguments 
+                          ( ("pvInfo" variable (:type "PVInfo") (reparse-symbol formal_parameter) [1523 1536]))                          
+                        :type "SummaryIncrementData")
+                        (reparse-symbol method_declaration) [1462 1538])
+                    ("extractIncrement" function
+                       (:arguments 
+                          ( ("sle" variable (:type "ServerLogEntry") (reparse-symbol formal_parameter) [1761 1779]))                          
+                        :type "SummaryIncrement")
+                        (reparse-symbol method_declaration) [1727 2503])
+                    ("extractPVInfo" function
+                       (:typemodifiers ("protected")
+                        :arguments 
+                          ( ("sle" variable (:type "ServerLogEntry") (reparse-symbol formal_parameter) [2630 2648]))                          
+                        :type "PVInfo")
+                        (reparse-symbol method_declaration) [2599 3728]))                  
+                :type "class")
+                (reparse-symbol class_declaration) [757 3730]))          
+    :file "PageViewExtractor.java"
+    :pointmax 3731
+    :fsize 4213
+    :lastmodtime '(21390 17126 0 0)
+    :unmatched-syntax '((PUBLIC 1720 . 1726))
+    )
+   (semanticdb-table "SummaryExtractor.java"
+    :major-mode 'malabar-mode
+    :tags 
+        '( ("com.tellapart.summary" package nil (reparse-symbol package_declaration) [1 31])
+            ("com.google.common.collect.ImmutableList" include nil (reparse-symbol import_declaration) [33 80])
+            ("com.google.common.collect.ImmutableMap" include nil (reparse-symbol import_declaration) [81 127])
+            ("com.google.common.collect.ImmutableSortedSet" include nil (reparse-symbol import_declaration) [128 180])
+            ("com.google.common.collect.MinMaxPriorityQueue" include nil (reparse-symbol import_declaration) [181 234])
+            ("com.google.common.collect.Sets" include nil (reparse-symbol import_declaration) [235 273])
+            ("com.google.common.collect.UnmodifiableIterator" include nil (reparse-symbol import_declaration) [274 328])
+            ("com.tellapart.identity.api.SID" include nil (reparse-symbol import_declaration) [329 367])
+            ("com.tellapart.serverlog.ServerLogEntry" include nil (reparse-symbol import_declaration) [368 414])
+            ("com.tellapart.summary.api.CategoricalHistogram" include nil (reparse-symbol import_declaration) [415 469])
+            ("com.tellapart.summary.api.Constants" include nil (reparse-symbol import_declaration) [470 513])
+            ("com.tellapart.summary.api.HistogramCell" include nil (reparse-symbol import_declaration) [514 561])
+            ("com.tellapart.summary.api.IncrementSubsample" include nil (reparse-symbol import_declaration) [562 614])
+            ("com.tellapart.summary.api.Summary" include nil (reparse-symbol import_declaration) [615 656])
+            ("com.tellapart.summary.api.SummaryData" include nil (reparse-symbol import_declaration) [657 702])
+            ("com.tellapart.summary.api.SummaryEventContext" include nil (reparse-symbol import_declaration) [703 756])
+            ("com.tellapart.summary.api.SummaryIncrement" include nil (reparse-symbol import_declaration) [757 807])
+            ("com.tellapart.summary.api.SummaryType" include nil (reparse-symbol import_declaration) [808 853])
+            ("com.tellapart.summary.exceptions.InconsistentSIDException" include nil (reparse-symbol import_declaration) [854 919])
+            ("com.tellapart.summary.exceptions.InconsistentSummaryTypeException" include nil (reparse-symbol import_declaration) [920 993])
+            ("com.tellapart.utils.Pair" include nil (reparse-symbol import_declaration) [994 1026])
+            ("java.io.Serializable" include nil (reparse-symbol import_declaration) [1028 1056])
+            ("java.util.Collection" include nil (reparse-symbol import_declaration) [1057 1085])
+            ("java.util.Comparator" include nil (reparse-symbol import_declaration) [1086 1114])
+            ("java.util.HashMap" include nil (reparse-symbol import_declaration) [1115 1140])
+            ("java.util.LinkedList" include nil (reparse-symbol import_declaration) [1141 1169])
+            ("java.util.List" include nil (reparse-symbol import_declaration) [1170 1192])
+            ("java.util.Map" include nil (reparse-symbol import_declaration) [1193 1214])
+            ("java.util.Queue" include nil (reparse-symbol import_declaration) [1215 1238])
+            ("SummaryExtractor" type
+               (:typemodifiers ("public" "abstract")
+                :interfaces ("Serializable")
+                :members 
+                  ( ("extractIncrement" function
+                       (:typemodifiers ("abstract")
+                        :arguments 
+                          ( ("sle" variable (:type "ServerLogEntry") (reparse-symbol formal_parameter) [1548 1566]))                          
+                        :type "SummaryIncrement")
+                        (reparse-symbol method_declaration) [1505 1568])
+                    ("getType" function
+                       (:typemodifiers ("public" "abstract")
+                        :type "SummaryType")
+                        (reparse-symbol method_declaration) [1655 1693])
+                    ("getHistogramCategoryAndValueForIncrement" function
+                       (:typemodifiers ("public" "abstract")
+                        :arguments 
+                          ( ("increment" variable (:type "SummaryIncrement") (reparse-symbol formal_parameter) [1995 2021]))                          
+                        :type "Collection<Pair<String,Double>>")
+                        (reparse-symbol method_declaration) [1898 2023])
+                    ("pruneContext" function
+                       (:typemodifiers ("public" "abstract")
+                        :arguments 
+                          ( ("ctx" variable (:type "SummaryEventContext") (reparse-symbol formal_parameter) [2142 2165]))                          
+                        :type "SummaryEventContext")
+                        (reparse-symbol method_declaration) [2093 2167]))                  
+                :type "class")
+                (reparse-symbol class_declaration) [1240 2170]))          
+    :file "SummaryExtractor.java"
+    :pointmax 2170
+    :fsize 2169
+    :lastmodtime '(21390 17126 0 0)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!Users!matt!dev!tellapart!summary!summary-api!src!main!java!com!tellapart!summary!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )
