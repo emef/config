@@ -52,6 +52,23 @@ vim.keymap.set('n', '<leader>f',
   }
 )
 
+vim.keymap.set('n', '[d', function()
+  vim.diagnostic.jump({ count = -1 })
+end, { desc = "Previous Diagnostic" })
+
+vim.keymap.set('n', ']d', function()
+  vim.diagnostic.jump({ count = 1 })
+end, { desc = "Next Diagnostic" })
+
+-- Navigate only through errors (skipping warnings, info, hints)
+vim.keymap.set('n', '[e', function()
+  vim.diagnostic.jump({ count = -1, severity = { min = vim.diagnostic.severity.ERROR } })
+end, { desc = "Previous Error" })
+
+vim.keymap.set('n', ']e', function()
+  vim.diagnostic.jump({ count = 1, severity = { min = vim.diagnostic.severity.ERROR } })
+end, { desc = "Next Error" })
+--
 -- leader prefix
 vim.g.mapleader = " "
 
