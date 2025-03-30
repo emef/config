@@ -1,0 +1,68 @@
+#!/bin/bash
+
+# Get the current directory name to use as the session name
+SESSION_NAME=$(basename "$PWD")
+
+if [ -n "$1" ] ;  then
+    TARGET_DIR="$1"
+
+    if [ ! -d "$TARGET_DIR" ]; then
+        echo "Error: Directory '$TARGET_DIR' does not exist."
+        exit 1
+    fi
+
+    cd "$TARGET_DIR" || { echo "Failed to change to directory: $TARGET_DIR"; exit 1; }
+fi
+
+if ! tmux list-sessions &>/dev/null; then
+    echo "Starting new tmux server and session..."
+    # Start a brand new tmux session and proceed with setup
+    tmux new-session -s "$SESSION_NAME" -d
+else
+    # Check if the specific session already exists
+    if tmux has-session -t "$SESSION_NAME" 2>/dev/null; then
+        echo "Attaching to existing session '$SESSION_NAME'..."
+        tmux attach-session -t "$SESSION_NAME"
+        exit 0
+    else
+        echo "Creating new session '$SESSION_NAME'..."
+        tmux new-session -s "$SESSION_NAME" -d
+    fi
+fi
+
+# Set up the layout:
+# 1. First create the main vertical split (left pane and right pane)
+tmux split-window -h -t "$SESSION_NAME:0"
+
+# 2. Then split the right pane horizontally to create the two stacked panes
+tmux split-window -v -t "$SESSION_NAME:0.1"
+
+# 3. Make the left pane larger (adjust the percentage as needed)
+tmux resize-pane -t "$SESSION_NAME:0.0" -R 30
+
+# Name the windows for easy reference
+tmux rename-window -t "$SESSION_NAME:0" "main"
+
+# Add custom keybindings to quickly navigate between panes
+# Unbind default keybindings to avoid conflicts
+tmux unbind-key M-1
+tmux unbind-key M-2
+tmux unbind-key M-3
+
+# Bind Alt+1 to select the left pane
+tmux bind-key -n M-1 select-pane -t "$SESSION_NAME:0.0"
+
+# Bind Alt+2 to select the upper right pane
+tmux bind-key -n M-2 select-pane -t "$SESSION_NAME:0.1"
+
+# Bind Alt+3 to select the lower right pane
+tmux bind-key -n M-3 select-pane -t "$SESSION_NAME:0.2"
+
+# Start nvim in the first pane (left pane)
+tmux send-keys -t 0 "nvim ." C-m
+
+# Make sure we're on the left pane
+tmux select-pane -t 0
+
+# Finally, attach to the session
+tmux attach-session -t "$SESSION_NAME"

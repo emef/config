@@ -1,0 +1,5 @@
+#!/bin/bash
+
+SESSION_NAME=$(basename "$PWD")
+tmux kill-session -t "$SESSION_NAME"
+echo "Killed tmux session: $SESSION_NAME"
