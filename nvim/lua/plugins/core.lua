@@ -10,6 +10,7 @@ return {
   },
   {
     'nvim-lualine/lualine.nvim',
+    enabled = false,
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = {
       options = {
@@ -22,10 +23,6 @@ return {
   { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
   "nvim-tree/nvim-tree.lua",
   {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' }
-  },
-  {
     "rachartier/tiny-inline-diagnostic.nvim",
     event = "VeryLazy",
     priority = 1000,
@@ -35,6 +32,16 @@ return {
       })
       -- Only if needed in your configuration, if you already have native LSP diagnostics
       vim.diagnostic.config({ virtual_text = false })
+    end
+  },
+  {
+    "kylechui/nvim-surround",
+    version = "^3.0.0", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
     end
   }
 }

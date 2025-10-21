@@ -2,26 +2,21 @@
 local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-  -- Mappings
-  local bufopts = { noremap = true, silent = true, buffer = bufnr }
-  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-  vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-  vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
 return {
   {
-    "williamboman/mason-lspconfig.nvim",
+    "ray-x/lsp_signature.nvim",
+    event = "InsertEnter",
     opts = {
-      ensure_installed = { "lua_ls" },
+      -- cfg options
     },
+    config = function()
+      require("lsp_signature").setup()
+    end
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason.nvim",
@@ -31,19 +26,32 @@ return {
     config = function()
       require("mason").setup()
       require("mason-lspconfig").setup({
-        ensure_installed = { "bashls", "lua_ls", "pyright", "ruff" }
+        ensure_installed = {
+          "bashls", "buf_ls", "gopls", "lua_ls", "pyright", "ruff",
+          "rust_analyzer", "terraformls",
+        },
       })
 
       local nvim_config_path = vim.fn.stdpath("config")
 
-      require("lspconfig").bashls.setup({})
-      require("lspconfig").ruff.setup({})
-      require("lspconfig").pyright.setup({
+      vim.lsp.enable('bashls');
+      vim.lsp.enable('buf_ls');
+      vim.lsp.enable('ruff');
+      vim.lsp.enable('rust_analyzer');
+      vim.lsp.enable('jsonls');
+      vim.lsp.enable('gopls');
+
+      vim.lsp.enable('pyright');
+      vim.lsp.config('pyright', {
         on_attach = on_attach,
         capabilities = require('cmp_nvim_lsp').default_capabilities()
       })
 
-      require("lspconfig").lua_ls.setup({
+      vim.lsp.enable('terraformls');
+      vim.lsp.enable('zls');
+      vim.lsp.enable('lua_ls');
+
+      vim.lsp.config('lua_ls', {
         root_dir = function(filename, _)
           -- Check if the file is in your Neovim config directory
           if filename:find(nvim_config_path, 1, true) == 1 then
